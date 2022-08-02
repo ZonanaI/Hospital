@@ -1,7 +1,8 @@
 package rooms;
 
 public class DeliveryRoom extends HospitalRoom{
-    public DeliveryRoom (int patientCount){
-        super(patientCount);
+
+    public DeliveryRoom(String location) {
+        super(location);
     }
 }

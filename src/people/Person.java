@@ -3,6 +3,7 @@ package people;
 public abstract class Person {
     protected int age;
     protected double weight;
+    protected double height;
     protected String bloodType;
     protected String gender;
     protected  String fullName;
@@ -11,21 +12,23 @@ public abstract class Person {
 
     protected double[] bloodPressure;
 
-    public Person (int age, double weight, String bloodType, String gender, String fullName,
+    public Person (int age, double weight, double height,String bloodType, String gender, String fullName,
                    String socialSecurityNumber) {
         this.age = age;
         this.weight = weight;
+        this.height = height;
         this.bloodType = bloodType;
         this.gender = gender;
-        this.isAlive = true;
         this.fullName = fullName;
         this.socialSecurityNumber = socialSecurityNumber;
+        this.isAlive = true;
     }
     public Person (int age, String gender, String fullName, String socialSecurityNumber) {
         this.age = age;
         this.gender = gender;
         this.fullName = fullName;
         this.socialSecurityNumber = socialSecurityNumber;
+        this.isAlive = true;
     }
     public int getAge() {
         return this.age;
@@ -41,6 +44,14 @@ public abstract class Person {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     public String getFullName() {

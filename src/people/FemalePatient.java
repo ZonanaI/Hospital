@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class FemalePatient extends Patient {
 
-    public FemalePatient(int age, double weight, String bloodType, String fullName, String complexity,
+    public FemalePatient(int age, String fullName, String complexity,
                          String socialSecurityNumber) {
-        super(age, weight, bloodType, "female", fullName, complexity, socialSecurityNumber);
+        super(age, "female", fullName, complexity, socialSecurityNumber);
     }
 
     public Patient giveBirth() {
@@ -30,9 +30,9 @@ public class FemalePatient extends Patient {
         String socialSecurityNumber = input.next();
         input.close();
         if (gender.equals("male")){
-            return new MalePatient(age, weight, bloodType, fullName, complexity, socialSecurityNumber);
+            return new MalePatient(age, fullName, complexity, socialSecurityNumber);
         } else {
-            return new FemalePatient(age, weight, bloodType, fullName, complexity, socialSecurityNumber);
+            return new FemalePatient(age, fullName, complexity, socialSecurityNumber);
         }
     }
 }

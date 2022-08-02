@@ -5,9 +5,8 @@ public class Employee extends Person{
     protected int workedHours;
     protected double payRate;
 
-    public Employee (int age, String gender, String fullName, String socialSecurityNumber, double payRate) {
+    public Employee (int age, String gender, String fullName, String socialSecurityNumber) {
         super(age, gender, fullName, socialSecurityNumber);
-        this.payRate = payRate;
         this.workedHours = 0;
     }
 
