@@ -1,12 +1,13 @@
 package people;
 
-public class Employee extends Person{
+public abstract class Employee extends Person{
 
     protected int workedHours;
     protected double payRate;
 
-    public Employee (int age, String gender, String fullName, String socialSecurityNumber) {
-        super(age, gender, fullName, socialSecurityNumber);
+
+    public Employee (int age, String gender, String fullName, String ID) {
+        super(age, gender, fullName, ID);
         this.workedHours = 0;
     }
 
@@ -25,4 +26,6 @@ public class Employee extends Person{
     public void setPayRate(double payRate) {
         this.payRate = payRate;
     }
+
+    public abstract double getPayCheck();
 }

@@ -2,7 +2,7 @@ import rooms.*;
 
 import java.util.*;
 
-public class Hospital {
+public class Main {
 
 
     public static void main (String [] args){
@@ -66,7 +66,6 @@ public class Hospital {
                 System.out.println("Enter \"p\" to add patient or \"e\" for employee, \"b\" to go back:");
                 command = scanner.nextLine();
 
-                Iterator <HospitalRoom> roomIterator = roomSet.iterator();
                 switch (command) {
                     case "p":
                         System.out.println("Enter the room initial the patient will be:");
@@ -86,12 +85,13 @@ public class Hospital {
                             String gender = scanner.nextLine().toLowerCase(Locale.ROOT);
                             System.out.println("Enter the patient's full name:");
                             String fullName = scanner.nextLine();
+                            System.out.println("Enter the patient's ID:");
+                            String ID = scanner.nextLine();
                             System.out.println("Enter the patient's complexity status:");
                             String complexity = scanner.nextLine().toLowerCase(Locale.ROOT);
-                            System.out.println("Enter the patient's social security number:");
-                            String socialSecurityNumber = scanner.nextLine();
-                            currentRoom.addPatientToSet(age, gender, fullName, complexity,
-                                    socialSecurityNumber);
+                            System.out.println("Enter the patient's bloodType:");
+                            String bloodType = scanner.nextLine();
+                            currentRoom.addPatientToSet(age, gender, fullName, ID, complexity, bloodType);
                         }
                         break;
 
@@ -115,10 +115,10 @@ public class Hospital {
                             String fullName = scanner.nextLine();
                             System.out.println("Enter the employee's profession status:");
                             String profession = scanner.nextLine().toLowerCase(Locale.ROOT);
-                            System.out.println("Enter the employee's social security number:");
-                            String socialSecurityNumber = scanner.nextLine();
+                            System.out.println("Enter the employee's ID:");
+                            String ID = scanner.nextLine();
                             currentRoom.addEmployeeToSet(age, gender, fullName, profession,
-                                    socialSecurityNumber);
+                                    ID);
                         }
                         break;
 

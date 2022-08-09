@@ -1,2 +1,6 @@
-package people;public interface IAppointments {
+package people;
+
+public interface IAppointments {
+
+    void makeAppointment();
 }

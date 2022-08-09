@@ -9,7 +9,7 @@ import java.util.Set;
 
 public abstract class HospitalRoom {
 
-    protected String location;  /* Floor-sector e.g., first floor sector A: 1-A */
+    protected String location;  /* Floor-sector e.g., first floor sector a: 1-a */
     protected int patientsCount;
     protected int deceasesCount;
     protected int recoveriesCount;
@@ -69,24 +69,24 @@ public abstract class HospitalRoom {
         return  patientsCount;
     }
 
-    public void addPatientToSet(int age, String gender, String fullName, String complexity,
-                                String socialSecurityNumber) {
+    public void addPatientToSet(int age, String gender, String fullName,
+                                String ID, String complexity, String bloodType) {
         if (gender.equals("male")){
-            patientsSet.add(new MalePatient(age, fullName, complexity, socialSecurityNumber));
+            patientsSet.add(new MalePatient(age, fullName, ID, complexity, bloodType));
         } else {
-            patientsSet.add(new FemalePatient(age, fullName, complexity, socialSecurityNumber));
+            patientsSet.add(new FemalePatient(age, fullName, ID, complexity, bloodType));
         }
 
     }
 
     public void addEmployeeToSet(int age, String gender, String fullName, String profession,
-                                 String socialSecurityNumber) {
+                                 String ID) {
         switch (profession){
             case "physician":
-                employeeSet.add(new Physician(age, gender, fullName, socialSecurityNumber));
+                employeeSet.add(new Physician(age, gender, fullName, ID));
                 break;
             case "nurse":
-                employeeSet.add(new Nurse(age, gender, fullName, socialSecurityNumber));
+                employeeSet.add(new Nurse(age, gender, fullName, ID));
                 break;
             default:
                 break;

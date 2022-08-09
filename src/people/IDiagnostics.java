@@ -1,5 +1,5 @@
 package people;
 
-public interface Diagnostics {
-    void measureBloodPressure(Patient patient);
+public interface IDiagnostics {
+    void measureVitalSigns(Patient patient);
 }

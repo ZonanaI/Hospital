@@ -4,30 +4,26 @@ public abstract class Person {
     protected int age;
     protected double weight;
     protected double height;
-    protected String bloodType;
     protected String gender;
     protected  String fullName;
-    protected String socialSecurityNumber;
+    protected String ID;
     protected boolean isAlive;
 
-    protected double[] bloodPressure;
-
-    public Person (int age, double weight, double height,String bloodType, String gender, String fullName,
-                   String socialSecurityNumber) {
+    public Person(int age, double weight, double height, String gender, String fullName,
+                   String ID) {
         this.age = age;
         this.weight = weight;
         this.height = height;
-        this.bloodType = bloodType;
         this.gender = gender;
         this.fullName = fullName;
-        this.socialSecurityNumber = socialSecurityNumber;
+        this.ID = ID;
         this.isAlive = true;
     }
-    public Person (int age, String gender, String fullName, String socialSecurityNumber) {
+    public Person (int age, String gender, String fullName, String ID) {
         this.age = age;
         this.gender = gender;
         this.fullName = fullName;
-        this.socialSecurityNumber = socialSecurityNumber;
+        this.ID = ID;
         this.isAlive = true;
     }
     public int getAge() {
@@ -60,14 +56,6 @@ public abstract class Person {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
-
-    public String getBloodType() {
-        return this.bloodType;
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
     }
 
     public boolean getIsAlive() {
