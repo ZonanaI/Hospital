@@ -1,10 +1,14 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.rooms.HospitalRoom;
 import org.apache.commons.collections4.map.LinkedMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDateTime;
 
-public abstract class Patient extends Person implements ISchedulable <Physician>{
+public abstract class Patient extends Person implements ISchedulable<Physician>, ICallable {
+    private static final Logger log = LogManager.getLogger(Patient.class);
     protected String bloodType;
     protected String complexity;
     protected int systolicPressure;
@@ -15,7 +19,7 @@ public abstract class Patient extends Person implements ISchedulable <Physician>
     protected String drugPrescription;
     protected String vitalSignsHistory;
 
-    protected LinkedMap <LocalDateTime,Physician> scheduledAppointments;
+    protected LinkedMap<LocalDateTime, Physician> scheduledAppointments;
     public static final int SYSTOLIC_PRESSURE_REFERENCE = 120;
     public static final int DIASTOLIC_PRESSURE_REFERENCE = 80;
     public static final int LOW_OXYGEN_PRESSURE = 60;
@@ -23,23 +27,26 @@ public abstract class Patient extends Person implements ISchedulable <Physician>
     public static final int HIGH_HEART_RATE = 100;
 
 
-
     @Override
     public String toString() {
         return "Patient: " + fullName + ", SSN: " + ID;
     }
-    public Patient (int age, String gender, String fullName,
-                    String ID,  String complexity, String bloodType) {
+
+    public Patient(int age, String gender, String fullName,
+                   String ID, String complexity, String bloodType) {
         super(age, gender, fullName, ID);
         this.complexity = complexity;
         this.bloodType = bloodType;
     }
 
-    public void scheduleAppointment(LocalDateTime askedDateTime, Physician physician){
-        if(physician.isScheduleFree(askedDateTime)){
-            physician.scheduleAppointment(askedDateTime,this);
-            scheduledAppointments.put(askedDateTime,physician);
-        }
+    @Override
+    public void scheduleAppointment(LocalDateTime askedDateTime, Physician physician) {
+        scheduledAppointments.put(askedDateTime, physician);
+    }
+
+    @Override
+    public void callPerson(HospitalRoom hospitalRoom) {
+        log.info("Please patient:" + this.toString() + "report to " + hospitalRoom.toString());
     }
 
     public String getComplexity() {

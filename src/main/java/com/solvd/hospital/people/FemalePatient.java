@@ -1,9 +1,13 @@
 package com.solvd.hospital.people;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Locale;
 import java.util.Scanner;
 
 public final class FemalePatient extends Patient {
+    private static final Logger log = LogManager.getLogger(FemalePatient.class);
 
     public FemalePatient(int age, String fullName, String ID, String complexity, String bloodType) {
         super(age, "female", fullName, ID, complexity, bloodType);
@@ -14,8 +18,7 @@ public final class FemalePatient extends Patient {
         int socialSecurityNumber = -1;
         try {
             socialSecurityNumber = Integer.parseInt(this.ID);
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         return socialSecurityNumber;
@@ -23,11 +26,11 @@ public final class FemalePatient extends Patient {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null || obj.getClass()!= this.getClass()){
+        if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
 
@@ -43,23 +46,23 @@ public final class FemalePatient extends Patient {
     public Patient giveBirth() {
         Scanner input = new Scanner(System.in);
         int age = 0;
-        System.out.println("Please enter the baby weight:");
+        log.info("Please enter the baby weight:");
         double weight = input.nextDouble();
-        System.out.println("Please enter the baby blood type:");
+        log.info("Please enter the baby blood type:");
         String bloodType = input.next();
         String gender;
         do {
-            System.out.println("Please enter the baby gender:");
+            log.info("Please enter the baby gender:");
             gender = input.next().toLowerCase(Locale.ROOT);
         } while (!gender.equals("male") && !gender.equals("female"));
-        System.out.println("Please enter the baby full name:");
+        log.info("Please enter the baby full name:");
         String fullName = input.next();
-        System.out.println("Please enter the baby complexity status:");
+        log.info("Please enter the baby complexity status:");
         String complexity = input.next();
-        System.out.println("Please enter the baby ID number:");
+        log.info("Please enter the baby ID number:");
         String ID = input.next();
         input.close();
-        if (gender.equals("male")){
+        if (gender.equals("male")) {
             return new MalePatient(age, fullName, ID, complexity, bloodType);
         } else {
             return new FemalePatient(age, fullName, ID, complexity, bloodType);

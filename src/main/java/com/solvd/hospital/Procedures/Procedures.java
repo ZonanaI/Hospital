@@ -16,13 +16,13 @@ public class Procedures {
 
     public Procedures(String type, String ID, double cost, String patientID, String physicianID,
                       LocalDateTime localDateTime) {
-            this.type = type;
-            this.ID = ID;
-            this.cost = cost;
-            this.patientID = patientID;
-            this.physicianID = physicianID;
-            this.localDateTime = localDateTime;
-            this.paidByPatient = false;
+        this.type = type;
+        this.ID = ID;
+        this.cost = cost;
+        this.patientID = patientID;
+        this.physicianID = physicianID;
+        this.localDateTime = localDateTime;
+        this.paidByPatient = false;
     }
 
     public Procedures(String type, String ID, double cost, double physicianPayRate, String patientID,
@@ -37,11 +37,35 @@ public class Procedures {
         this.paidToPhysician = false;
     }
 
-    public static Procedures addDiagnosticProcedure (String patientID, String physicianID, LocalDateTime localDateTime){
+    public static Procedures addDiagnosticProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
         String type = "diagnostic";
         String ID = "001";
-        double cost = 20;
-        double physicianPayRate = 5;
+        double cost = 120;
+        double physicianPayRate = 30;
+        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+    }
+
+    public static Procedures addBirthProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+        String type = "birth";
+        String ID = "014";
+        double cost = 2000;
+        double physicianPayRate = 500;
+        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+    }
+
+    public static Procedures addAnesthesiaProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+        String type = "anesthesia";
+        String ID = "017";
+        double cost = 1000;
+        double physicianPayRate = 400;
+        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+    }
+
+    public static Procedures addMinorSurgeryProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+        String type = "minor surgery";
+        String ID = "022";
+        double cost = 1500;
+        double physicianPayRate = 375;
         return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
     }
 

@@ -2,16 +2,16 @@ package com.solvd.hospital.people;
 
 import java.time.LocalTime;
 
-public abstract class Employee extends Person{
+public abstract class Employee extends Person {
 
     protected int workedHours;
     protected LocalTime entryTime;
     protected LocalTime leavingTime;
-    protected int [] workingDays;
+    protected int[] workingDays;
     protected double payRate;
 
 
-    public Employee (int age, String gender, String fullName, String ID) {
+    public Employee(int age, String gender, String fullName, String ID) {
         super(age, gender, fullName, ID);
         this.workedHours = 0;
     }

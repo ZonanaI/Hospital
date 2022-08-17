@@ -1,12 +1,17 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.rooms.HospitalRoom;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public final class Nurse extends Employee implements IDiagnostics {
+public final class Nurse extends Employee implements IDiagnosable, ICallable {
+    private static final Logger log = LogManager.getLogger(Nurse.class);
 
-    public Nurse(int age, String gender, String fullName, String ID){
+    public Nurse(int age, String gender, String fullName, String ID) {
         super(age, gender, fullName, ID);
     }
 
@@ -20,8 +25,7 @@ public final class Nurse extends Employee implements IDiagnostics {
         int socialSecurityNumber = -1;
         try {
             socialSecurityNumber = Integer.parseInt(this.ID);
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         return socialSecurityNumber;
@@ -29,11 +33,11 @@ public final class Nurse extends Employee implements IDiagnostics {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null || obj.getClass()!= this.getClass()){
+        if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
 
@@ -42,7 +46,7 @@ public final class Nurse extends Employee implements IDiagnostics {
     }
 
     @Override
-    public double getPayCheck(){
+    public double getPayCheck() {
         return workedHours * payRate;
     }
 
@@ -54,20 +58,25 @@ public final class Nurse extends Employee implements IDiagnostics {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         stringBuilder.append("\n" + dtf.format(now));
-        System.out.println("Please enter the measured systolic pressure:");
+        log.info("Please enter the measured systolic pressure:");
         patient.setSystolicPressure(scanner.nextInt());
         stringBuilder.append("\nSystolic Pressure: " + patient.getSystolicPressure());
-        System.out.println("Please enter the measured diastolic pressure:");
+        log.info("Please enter the measured diastolic pressure:");
         patient.setDiastolicPressure(scanner.nextInt());
         stringBuilder.append("\nDiastolic Pressure: " + patient.getDiastolicPressure());
-        System.out.println("Please enter the measured oxygen pressure:");
+        log.info("Please enter the measured oxygen pressure:");
         patient.setOxygenPressure(scanner.nextInt());
         stringBuilder.append("\nOxygen Pressure: " + patient.getOxygenPressure());
-        System.out.println("Please enter the measured heart rate:");
+        log.info("Please enter the measured heart rate:");
         patient.setHeartRate(scanner.nextInt());
         stringBuilder.append("\nHeart rate: " + patient.getHeartRate());
 
         patient.setVitalSignsHistory(stringBuilder.toString());
         scanner.close();
+    }
+
+    @Override
+    public void callPerson(HospitalRoom hospitalRoom) {
+        log.info("Please nurse:" + this.toString() + "report to " + hospitalRoom.toString());
     }
 }
