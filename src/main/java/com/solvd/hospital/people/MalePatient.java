@@ -1,9 +1,13 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidBloodTypeException;
+
 public final class MalePatient extends Patient {
 
 
-    public MalePatient(int age, String fullName, String ID, String complexity, String bloodType) {
+    public MalePatient(int age, String fullName, String ID, String complexity, String bloodType)
+            throws InvalidAgeException, InvalidBloodTypeException {
         super(age, "male", fullName, ID, complexity, bloodType);
     }
 

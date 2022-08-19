@@ -1,5 +1,7 @@
 package com.solvd.hospital.rooms;
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import com.solvd.hospital.people.*;
 
 import java.util.HashSet;
@@ -39,8 +41,8 @@ public abstract class HospitalRoom {
         return patientsCount;
     }
 
-    public void addPatientToSet(int age, String gender, String fullName,
-                                String ID, String complexity, String bloodType) {
+    public void addPatientToSet(int age, String gender, String fullName, String ID, String complexity,
+                                String bloodType) throws InvalidAgeException, InvalidBloodTypeException {
         if (gender.equals("male")) {
             patientsSet.add(new MalePatient(age, fullName, ID, complexity, bloodType));
         } else {
@@ -50,7 +52,7 @@ public abstract class HospitalRoom {
     }
 
     public void addEmployeeToSet(int age, String gender, String fullName, String profession,
-                                 String ID) {
+                                 String ID) throws InvalidAgeException {
         switch (profession) {
             case "physician":
                 employeeSet.add(new Physician(age, gender, fullName, ID));

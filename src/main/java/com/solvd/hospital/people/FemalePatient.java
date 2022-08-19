@@ -1,5 +1,7 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,7 +11,8 @@ import java.util.Scanner;
 public final class FemalePatient extends Patient {
     private static final Logger log = LogManager.getLogger(FemalePatient.class);
 
-    public FemalePatient(int age, String fullName, String ID, String complexity, String bloodType) {
+    public FemalePatient(int age, String fullName, String ID, String complexity, String bloodType)
+            throws InvalidAgeException, InvalidBloodTypeException {
         super(age, "female", fullName, ID, complexity, bloodType);
     }
 
@@ -43,7 +46,7 @@ public final class FemalePatient extends Patient {
         return " Female patient: " + fullName + ", ID: " + ID;
     }
 
-    public Patient giveBirth() {
+    public Patient giveBirth() throws InvalidAgeException, InvalidBloodTypeException {
         Scanner input = new Scanner(System.in);
         int age = 0;
         log.info("Please enter the baby weight:");

@@ -1,9 +1,12 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidOxygenLevelException;
 import com.solvd.hospital.rooms.HospitalRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -11,7 +14,7 @@ import java.util.Scanner;
 public final class Nurse extends Employee implements IDiagnosable, ICallable {
     private static final Logger log = LogManager.getLogger(Nurse.class);
 
-    public Nurse(int age, String gender, String fullName, String ID) {
+    public Nurse(int age, String gender, String fullName, String ID) throws InvalidAgeException {
         super(age, gender, fullName, ID);
     }
 
@@ -65,7 +68,11 @@ public final class Nurse extends Employee implements IDiagnosable, ICallable {
         patient.setDiastolicPressure(scanner.nextInt());
         stringBuilder.append("\nDiastolic Pressure: " + patient.getDiastolicPressure());
         log.info("Please enter the measured oxygen pressure:");
-        patient.setOxygenPressure(scanner.nextInt());
+        try {
+            patient.setOxygenPressure(scanner.nextInt());
+        } catch (InvalidOxygenLevelException e) {
+            log.error(e.getMessage());
+        }
         stringBuilder.append("\nOxygen Pressure: " + patient.getOxygenPressure());
         log.info("Please enter the measured heart rate:");
         patient.setHeartRate(scanner.nextInt());
@@ -77,6 +84,9 @@ public final class Nurse extends Employee implements IDiagnosable, ICallable {
 
     @Override
     public void callPerson(HospitalRoom hospitalRoom) {
-        log.info("Please nurse:" + this.toString() + "report to " + hospitalRoom.toString());
+        if (!this.vacationDays.contains(LocalDate.now())) {
+            log.info("Please Nurse:" + this.toString() + " report to " + hospitalRoom.toString());
+        }
+        log.info("Sorry, Nurse:" + this.toString() + " is on vacation");
     }
 }

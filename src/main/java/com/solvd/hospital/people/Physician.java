@@ -1,6 +1,8 @@
 package com.solvd.hospital.people;
 
 import com.solvd.hospital.Procedures.Procedures;
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidOxygenLevelException;
 import com.solvd.hospital.rooms.HospitalRoom;
 import org.apache.commons.collections4.map.LinkedMap;
 import org.apache.logging.log4j.LogManager;
@@ -15,12 +17,12 @@ import java.util.*;
 public class Physician extends Employee implements IDiagnosable, ISchedulable<Patient>, ICallable {
 
     private static final Logger log = LogManager.getLogger(Physician.class);
-    protected Set<Procedures> doneProcedures;
+    protected ArrayList<Procedures> doneProcedures = new ArrayList<>();
     protected String medicalSpeciality;
-    protected LinkedMap<LocalDateTime, Patient> scheduledAppointments;
+    protected LinkedMap<LocalDateTime, Patient> scheduledAppointments = new LinkedMap<>();
     protected int appointmentDuration;
 
-    public Physician(int age, String gender, String fullName, String ID) {
+    public Physician(int age, String gender, String fullName, String ID) throws InvalidAgeException {
         super(age, gender, fullName, ID);
         this.appointmentDuration = 30;
     }
@@ -62,8 +64,7 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         while (proceduresIterator.hasNext()) {
             Procedures currentProcedure = proceduresIterator.next();
             if (!currentProcedure.isPaidToPhysician()) {
-                double currentProcedurePayRate = proceduresIterator.next().getPhysicianPayRate();
-                proceduresPay += currentProcedurePayRate;
+                proceduresPay += currentProcedure.getPhysicianPayRate();
                 currentProcedure.setPaidToPhysician(true);
             }
         }
@@ -85,7 +86,11 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         patient.setDiastolicPressure(scanner.nextInt());
         stringBuilder.append("\nDiastolic Pressure: " + patient.getDiastolicPressure());
         log.info("Please enter the measured oxygen pressure:");
-        patient.setOxygenPressure(scanner.nextInt());
+        try {
+            patient.setOxygenPressure(scanner.nextInt());
+        } catch (InvalidOxygenLevelException e) {
+            log.error(e.getMessage());
+        }
         stringBuilder.append("\nOxygen Pressure: " + patient.getOxygenPressure());
         log.info("Please enter the measured heart rate:");
         patient.setHeartRate(scanner.nextInt());
@@ -93,12 +98,16 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
 
         patient.setVitalSignsHistory(stringBuilder.toString());
         scanner.close();
+        patient.receivedProcedures.add(Procedures.addDiagnosticProcedure(patient.ID, this.ID, now));
         doneProcedures.add(Procedures.addDiagnosticProcedure(patient.ID, this.ID, now));
     }
 
     @Override
     public void callPerson(HospitalRoom hospitalRoom) {
-        log.info("Please Dr.:" + this.toString() + "report to " + hospitalRoom.toString());
+        if (!this.vacationDays.contains(LocalDate.now())) {
+            log.info("Please Dr.:" + this.toString() + " report to " + hospitalRoom.toString());
+        }
+        log.info("Sorry, Dr:" + this.toString() + " is on vacation");
     }
 
     public String getMedicalSpeciality() {
@@ -152,8 +161,31 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
             scheduledAppointments.put(askedDateTime, patient);
             patient.scheduleAppointment(askedDateTime, this);
         } else {
-            log.error("The asked time: " + askedDateTime.toString() + " is already taken," +
-                    "please choose another");
+            log.error("The asked time: " + askedDateTime.toString() + " is already taken or the Doctor won´t be" +
+                    " available, please choose another");
+        }
+    }
+
+    //Set vacation, remove date keys, if it has an appointment prints a warning to re-schedule.
+    @Override
+    public void setVacationDays(LocalDate firstVacationDay, LocalDate lastVacationDay) {
+        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date.plusDays(1)) {
+            vacationDays.add(date);
+        }
+        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date.plusDays(1)) {
+            for (LocalTime time = entryTime; time.isAfter(leavingTime.minusMinutes(appointmentDuration));
+                 time.plusMinutes(appointmentDuration)) {
+                LocalDateTime currentLocalDateTime = date.atTime(time);
+                if (scheduledAppointments.containsKey(currentLocalDateTime)) {
+                    if (scheduledAppointments.get(currentLocalDateTime) != null) {
+                        String patientName = scheduledAppointments.get(currentLocalDateTime).getFullName();
+                        log.info("Please re schedule appointment on " + currentLocalDateTime + " with patient: "
+                                + patientName);
+                        scheduledAppointments.remove(currentLocalDateTime);
+                    }
+                    scheduledAppointments.remove(currentLocalDateTime);
+                }
+            }
         }
     }
 }

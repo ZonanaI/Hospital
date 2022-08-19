@@ -4,6 +4,8 @@ package com.solvd.hospital;
 import java.util.*;
 
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import com.solvd.hospital.rooms.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -64,7 +66,8 @@ public class Main {
 
         while (!command.toLowerCase(Locale.ROOT).equals("exit")) {
             log.info("Enter \"a\" to add new patient/employee, \"r\" to remove, \"gp\" to get" +
-                    " patients list, \"ge\" for employees list, \n\"exit\" to close de application:");
+                    " patients list, \"ge\" for employees list, " + "\"c\" to call patient/employee " +
+                    "\n\"exit\" to close de application:");
             command = scanner.nextLine();
             if (command.equals("exit")) {
                 break;
@@ -83,12 +86,7 @@ public class Main {
                         HospitalRoom currentRoom = searchHospitalRoom(roomSet, patientRoom, patientLocation);
                         if (currentRoom != null) {
                             log.info("Enter the patient's age:");
-                            int age = 0;
-                            try {
-                                age = Integer.parseInt(scanner.nextLine());
-                            } catch (NumberFormatException e) {
-                                e.printStackTrace();
-                            }
+                            int age = Integer.parseInt(scanner.nextLine());
                             log.info("Enter the patient's gender:");
                             String gender = scanner.nextLine().toLowerCase(Locale.ROOT);
                             log.info("Enter the patient's full name:");
@@ -99,7 +97,12 @@ public class Main {
                             String complexity = scanner.nextLine().toLowerCase(Locale.ROOT);
                             log.info("Enter the patient's bloodType:");
                             String bloodType = scanner.nextLine();
-                            currentRoom.addPatientToSet(age, gender, fullName, ID, complexity, bloodType);
+                            try {
+                                currentRoom.addPatientToSet(age, gender, fullName, ID, complexity, bloodType);
+                            } catch (InvalidAgeException | InvalidBloodTypeException e) {
+                                log.error(e.getMessage());
+                            }
+
                         }
                         break;
 
@@ -111,12 +114,7 @@ public class Main {
                         currentRoom = searchHospitalRoom(roomSet, employeeRoom, employeeLocation);
                         if (currentRoom != null) {
                             log.info("Enter the employee's age:");
-                            int age = 0;
-                            try {
-                                age = Integer.parseInt(scanner.nextLine());
-                            } catch (NumberFormatException e) {
-                                e.printStackTrace();
-                            }
+                            int age = Integer.parseInt(scanner.nextLine());
                             log.info("Enter the employee's gender:");
                             String gender = scanner.nextLine().toLowerCase(Locale.ROOT);
                             log.info("Enter the employee's full name:");
@@ -125,8 +123,13 @@ public class Main {
                             String profession = scanner.nextLine().toLowerCase(Locale.ROOT);
                             log.info("Enter the employee's ID:");
                             String ID = scanner.nextLine();
-                            currentRoom.addEmployeeToSet(age, gender, fullName, profession,
-                                    ID);
+                            try {
+                                currentRoom.addEmployeeToSet(age, gender, fullName, profession,
+                                        ID);
+                            } catch (InvalidAgeException e) {
+                                log.error(e.getMessage());
+                            }
+
                         }
                         break;
 

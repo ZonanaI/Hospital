@@ -1,6 +1,10 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.TreeSet;
 
 public abstract class Employee extends Person {
 
@@ -9,13 +13,16 @@ public abstract class Employee extends Person {
     protected LocalTime leavingTime;
     protected int[] workingDays;
     protected double payRate;
+    protected TreeSet<LocalDate> vacationDays = new TreeSet<>();
 
 
-    public Employee(int age, String gender, String fullName, String ID) {
+    public Employee(int age, String gender, String fullName, String ID) throws InvalidAgeException {
         super(age, gender, fullName, ID);
         this.workedHours = 0;
     }
 
+
+    //Setters and getters
     public int getWorkedHours() {
         return workedHours;
     }
@@ -56,5 +63,11 @@ public abstract class Employee extends Person {
 
     public void setWorkingDays(int[] workingDays) {
         this.workingDays = workingDays;
+    }
+
+    public void setVacationDays(LocalDate firstVacationDay, LocalDate lastVacationDay) {
+        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date.plusDays(1)) {
+            vacationDays.add(date);
+        }
     }
 }
