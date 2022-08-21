@@ -2,8 +2,11 @@ package com.solvd.hospital.rooms;
 
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidBloodTypeException;
+import com.solvd.hospital.exceptions.InvalidPayRateException;
+import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import com.solvd.hospital.people.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -51,14 +54,15 @@ public abstract class HospitalRoom {
 
     }
 
-    public void addEmployeeToSet(int age, String gender, String fullName, String profession,
-                                 String ID) throws InvalidAgeException {
+    public void addEmployeeToSet(int age, String gender, String fullName, String profession, String ID,
+                                 double payRate, ArrayList<Integer> workingDays) throws InvalidAgeException,
+            InvalidPayRateException, InvalidWorkingDayException {
         switch (profession) {
             case "physician":
-                employeeSet.add(new Physician(age, gender, fullName, ID));
+                employeeSet.add(new Physician(age, gender, fullName, ID, payRate, workingDays));
                 break;
             case "nurse":
-                employeeSet.add(new Nurse(age, gender, fullName, ID));
+                employeeSet.add(new Nurse(age, gender, fullName, ID, payRate, workingDays));
                 break;
             default:
                 break;

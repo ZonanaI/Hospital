@@ -18,7 +18,7 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
     protected String complexity;
     protected int systolicPressure;
     protected int diastolicPressure;
-    protected int oxygenPressure;
+    protected int oxygenLevel;
     protected int heartRate;
     protected String diagnostic;
     protected String drugPrescription;
@@ -28,7 +28,7 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
     protected ArrayList<Procedures> receivedProcedures = new ArrayList<>();
     public static final int SYSTOLIC_PRESSURE_REFERENCE = 120;
     public static final int DIASTOLIC_PRESSURE_REFERENCE = 80;
-    public static final int LOW_OXYGEN_PRESSURE = 60;
+    public static final int LOW_OXYGEN_LEVEL = 60;
     public static final int LOW_HEART_RATE = 60;
     public static final int HIGH_HEART_RATE = 100;
     public static final String[] BLOOD_TYPES = new String[]{"O-", "O+", "B-", "B+", "A-", "A+", "AB-", "AB+"};
@@ -108,15 +108,15 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
         this.diastolicPressure = diastolicPressure;
     }
 
-    public int getOxygenPressure() {
-        return oxygenPressure;
+    public int getOxygenLevel() {
+        return oxygenLevel;
     }
 
-    public void setOxygenPressure(int oxygenPressure) throws InvalidOxygenLevelException {
-        if (oxygenPressure < 50) {
+    public void setOxygenLevel(int oxygenLevel) throws InvalidOxygenLevelException {
+        if (oxygenLevel < 50) {
             throw new InvalidOxygenLevelException("Oxygen pressure too low check your oximeter");
         }
-        this.oxygenPressure = oxygenPressure;
+        this.oxygenLevel = oxygenLevel;
     }
 
     public int getHeartRate() {

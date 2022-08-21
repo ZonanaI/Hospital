@@ -3,6 +3,8 @@ package com.solvd.hospital.people;
 import com.solvd.hospital.Procedures.Procedures;
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidOxygenLevelException;
+import com.solvd.hospital.exceptions.InvalidPayRateException;
+import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import com.solvd.hospital.rooms.HospitalRoom;
 import org.apache.commons.collections4.map.LinkedMap;
 import org.apache.logging.log4j.LogManager;
@@ -22,8 +24,10 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
     protected LinkedMap<LocalDateTime, Patient> scheduledAppointments = new LinkedMap<>();
     protected int appointmentDuration;
 
-    public Physician(int age, String gender, String fullName, String ID) throws InvalidAgeException {
-        super(age, gender, fullName, ID);
+    public Physician(int age, String gender, String fullName, String ID, double payRate,
+                     ArrayList<Integer> workingDays) throws InvalidAgeException, InvalidPayRateException,
+            InvalidWorkingDayException {
+        super(age, gender, fullName, ID, payRate, workingDays);
         this.appointmentDuration = 30;
     }
 
@@ -85,13 +89,13 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         log.info("Please enter the measured diastolic pressure:");
         patient.setDiastolicPressure(scanner.nextInt());
         stringBuilder.append("\nDiastolic Pressure: " + patient.getDiastolicPressure());
-        log.info("Please enter the measured oxygen pressure:");
+        log.info("Please enter the measured oxygen level:");
         try {
-            patient.setOxygenPressure(scanner.nextInt());
+            patient.setOxygenLevel(scanner.nextInt());
         } catch (InvalidOxygenLevelException e) {
             log.error(e.getMessage());
         }
-        stringBuilder.append("\nOxygen Pressure: " + patient.getOxygenPressure());
+        stringBuilder.append("\nOxygen level: " + patient.getOxygenLevel());
         log.info("Please enter the measured heart rate:");
         patient.setHeartRate(scanner.nextInt());
         stringBuilder.append("\nHeart rate: " + patient.getHeartRate());
@@ -123,7 +127,7 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
             LocalDateTime currentLocalDateTime = LocalDateTime.now();
             for (long i = 0; i < 365; i++) {
                 LocalDate nextScheduledDate = currentLocalDateTime.plusDays(i).toLocalDate();
-                if (Arrays.binarySearch(workingDays, currentLocalDateTime.getDayOfWeek().getValue()) >= 0) {
+                if (workingDays.contains(currentLocalDateTime.getDayOfWeek().getValue())) {
                     for (LocalTime currentTime = entryTime; currentTime.
                             isAfter(leavingTime.minusMinutes(appointmentDuration));
                          currentTime.plusMinutes(appointmentDuration)) {
@@ -136,7 +140,7 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
             LocalDateTime lastScheduledRegister = scheduledAppointments.lastKey();
             for (long i = 1; i < 365; i++) {
                 LocalDate nextScheduledDate = lastScheduledRegister.plusDays(i).toLocalDate();
-                if (Arrays.binarySearch(workingDays, lastScheduledRegister.getDayOfWeek().getValue()) >= 0) {
+                if (workingDays.contains(lastScheduledRegister.getDayOfWeek().getValue())) {
                     for (LocalTime currentTime = entryTime; currentTime.
                             isAfter(leavingTime.minusMinutes(appointmentDuration));
                          currentTime.plusMinutes(appointmentDuration)) {
@@ -156,6 +160,7 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         return false;
     }
 
+    @Override
     public void scheduleAppointment(LocalDateTime askedDateTime, Patient patient) {
         if (isScheduleFree(askedDateTime)) {
             scheduledAppointments.put(askedDateTime, patient);

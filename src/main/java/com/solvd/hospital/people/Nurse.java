@@ -2,6 +2,8 @@ package com.solvd.hospital.people;
 
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidOxygenLevelException;
+import com.solvd.hospital.exceptions.InvalidPayRateException;
+import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import com.solvd.hospital.rooms.HospitalRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,13 +11,15 @@ import org.apache.logging.log4j.Logger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public final class Nurse extends Employee implements IDiagnosable, ICallable {
     private static final Logger log = LogManager.getLogger(Nurse.class);
 
-    public Nurse(int age, String gender, String fullName, String ID) throws InvalidAgeException {
-        super(age, gender, fullName, ID);
+    public Nurse(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays)
+            throws InvalidAgeException, InvalidPayRateException, InvalidWorkingDayException {
+        super(age, gender, fullName, ID, payRate, workingDays);
     }
 
     @Override
@@ -67,13 +71,13 @@ public final class Nurse extends Employee implements IDiagnosable, ICallable {
         log.info("Please enter the measured diastolic pressure:");
         patient.setDiastolicPressure(scanner.nextInt());
         stringBuilder.append("\nDiastolic Pressure: " + patient.getDiastolicPressure());
-        log.info("Please enter the measured oxygen pressure:");
+        log.info("Please enter the measured oxygen level:");
         try {
-            patient.setOxygenPressure(scanner.nextInt());
+            patient.setOxygenLevel(scanner.nextInt());
         } catch (InvalidOxygenLevelException e) {
             log.error(e.getMessage());
         }
-        stringBuilder.append("\nOxygen Pressure: " + patient.getOxygenPressure());
+        stringBuilder.append("\nOxygen Level: " + patient.getOxygenLevel());
         log.info("Please enter the measured heart rate:");
         patient.setHeartRate(scanner.nextInt());
         stringBuilder.append("\nHeart rate: " + patient.getHeartRate());

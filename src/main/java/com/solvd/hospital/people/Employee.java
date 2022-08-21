@@ -1,9 +1,13 @@
 package com.solvd.hospital.people;
 
 import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidPayRateException;
+import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.TreeSet;
 
 public abstract class Employee extends Person {
@@ -11,14 +15,23 @@ public abstract class Employee extends Person {
     protected int workedHours;
     protected LocalTime entryTime;
     protected LocalTime leavingTime;
-    protected int[] workingDays;
+    protected ArrayList<Integer> workingDays;
     protected double payRate;
     protected TreeSet<LocalDate> vacationDays = new TreeSet<>();
 
 
-    public Employee(int age, String gender, String fullName, String ID) throws InvalidAgeException {
+    public Employee(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays)
+            throws InvalidAgeException, InvalidPayRateException, InvalidWorkingDayException {
         super(age, gender, fullName, ID);
+        if (payRate <= 0) {
+            throw new InvalidPayRateException("Pay rate must be greater than zero");
+        }
+        this.payRate = payRate;
         this.workedHours = 0;
+        if (workingDays.isEmpty()) {
+            throw new InvalidWorkingDayException("Employee must have at least one working day");
+        }
+        this.workingDays = workingDays;
     }
 
 
@@ -57,17 +70,19 @@ public abstract class Employee extends Person {
         this.leavingTime = leavingTime;
     }
 
-    public int[] getWorkingDays() {
+    public ArrayList<Integer> getWorkingDays() {
         return workingDays;
     }
 
-    public void setWorkingDays(int[] workingDays) {
+    public void setWorkingDays(ArrayList<Integer> workingDays) {
         this.workingDays = workingDays;
     }
 
     public void setVacationDays(LocalDate firstVacationDay, LocalDate lastVacationDay) {
-        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date.plusDays(1)) {
+        LocalDate date = firstVacationDay;
+        while (date.isBefore(lastVacationDay)) {
             vacationDays.add(date);
+            date.plusDays(1);
         }
     }
 }

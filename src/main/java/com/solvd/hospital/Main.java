@@ -6,6 +6,8 @@ import java.util.*;
 
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidBloodTypeException;
+import com.solvd.hospital.exceptions.InvalidPayRateException;
+import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import com.solvd.hospital.rooms.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -96,7 +98,7 @@ public class Main {
                             log.info("Enter the patient's complexity status:");
                             String complexity = scanner.nextLine().toLowerCase(Locale.ROOT);
                             log.info("Enter the patient's bloodType:");
-                            String bloodType = scanner.nextLine();
+                            String bloodType = scanner.nextLine().toUpperCase();
                             try {
                                 currentRoom.addPatientToSet(age, gender, fullName, ID, complexity, bloodType);
                             } catch (InvalidAgeException | InvalidBloodTypeException e) {
@@ -123,10 +125,15 @@ public class Main {
                             String profession = scanner.nextLine().toLowerCase(Locale.ROOT);
                             log.info("Enter the employee's ID:");
                             String ID = scanner.nextLine();
+                            log.info("Enter the employee's pay rate:");
+                            double payRate = Double.parseDouble(scanner.nextLine());
+                            log.info("Enter the employee's working days (first 3 initials):");
+                            String workingDays = scanner.nextLine();
+                            ArrayList<Integer> workingDaysList = convertWorkingDays(workingDays);
                             try {
                                 currentRoom.addEmployeeToSet(age, gender, fullName, profession,
-                                        ID);
-                            } catch (InvalidAgeException e) {
+                                        ID, payRate, workingDaysList);
+                            } catch (InvalidAgeException | InvalidPayRateException | InvalidWorkingDayException e) {
                                 log.error(e.getMessage());
                             }
 
@@ -220,5 +227,25 @@ public class Main {
         }
         log.error("Room not found");
         return null;
+    }
+
+    static ArrayList<Integer> convertWorkingDays(String workingDays) {
+        ArrayList<Integer> days = new ArrayList<>();
+        workingDays.toUpperCase();
+        if (workingDays.contains("MON"))
+            days.add(1);
+        if (workingDays.contains("TUE"))
+            days.add(2);
+        if (workingDays.contains("WED"))
+            days.add(3);
+        if (workingDays.contains("THU"))
+            days.add(4);
+        if (workingDays.contains("FRI"))
+            days.add(5);
+        if (workingDays.contains("SAT"))
+            days.add(6);
+        if (workingDays.contains("SUN"))
+            days.add(7);
+        return days;
     }
 }
