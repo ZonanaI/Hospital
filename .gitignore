@@ -5,3 +5,4 @@ hospital.iml
 pom.xml
 target
 logs
+/target/

@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public abstract class Patient extends Person implements ISchedulable<Physician>, ICallable, IChargeable {
+public abstract class Patient extends Person implements ISchedulable<Physician>, ICallable, IChargeable, IEvacuable {
     private static final Logger log = LogManager.getLogger(Patient.class);
     protected String bloodType;
     protected String complexity;
@@ -82,6 +82,10 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
         scanner.close();
     }
 
+    @Override
+    public void evacuateTheRoom(String cause) {
+        log.info("Please: " + this.fullName + " evacuate the room, there´s been a " + cause);
+    }
 
     //Setters and getters
     public String getComplexity() {

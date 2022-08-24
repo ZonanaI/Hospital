@@ -1,6 +1,9 @@
 package com.solvd.hospital;
 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
@@ -8,6 +11,9 @@ import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import com.solvd.hospital.exceptions.InvalidPayRateException;
 import com.solvd.hospital.exceptions.InvalidWorkingDayException;
+import com.solvd.hospital.people.Employee;
+import com.solvd.hospital.people.Patient;
+import com.solvd.hospital.people.Physician;
 import com.solvd.hospital.rooms.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,11 +27,29 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         Set<HospitalRoom> roomSet = new HashSet<>();
+        CustomLinkedList<String> welcomeMessages = new CustomLinkedList<>();
+        welcomeMessages.insert("Hello, this is Hospital demo program");
+        welcomeMessages.insert("You can choose between customizing the hospital rooms, employees and patients");
+        welcomeMessages.insert("Also, you can choose to load default configuration");
+        welcomeMessages.insert("Testing removing");
+        welcomeMessages.remove("Testing removing");
+        welcomeMessages.remove("Testing removing");
+        for (String message : welcomeMessages) {
+            log.info(message);
+        }
         while (!command.toLowerCase(Locale.ROOT).equals("f")) {
             log.info("Initial configuration of hospital rooms");
-            log.info("Enter \"c\" to add new Consulting room, \"d\": Delivery room, \"e\" Emergency room," +
-                    " \"i\" Intensive care room, \"m\" Maternity room, \n\"n\" Nursery room, \"r\" Recovery room," +
-                    " \"s\" Surgery room. Enter \"exit\" to close the application, \"f\" to end rooms configuration:");
+            log.info("Enter:" +
+                    "\n\"c\" to add new Consulting room," +
+                    "\n\"d\": Delivery room," +
+                    "\n\"e\" Emergency room," +
+                    "\n\"i\" Intensive care room," +
+                    "\n\"m\" Maternity room," +
+                    "\n\"n\" Nursery room," +
+                    "\n\"r\" Recovery room," +
+                    "\n\"s\" Surgery room." +
+                    "\n\"f\" to end rooms configuration:" +
+                    "\n\"exit\" to close the application,");
             command = scanner.nextLine().toLowerCase();
             if (command.equals("exit") || command.equals("f")) {
                 break;
@@ -67,17 +91,32 @@ public class Main {
         }
 
         while (!command.toLowerCase(Locale.ROOT).equals("exit")) {
-            log.info("Enter \"a\" to add new patient/employee, \"r\" to remove, \"gp\" to get" +
-                    " patients list, \"ge\" for employees list, " + "\"c\" to call patient/employee " +
-                    "\n\"exit\" to close de application:");
-            command = scanner.nextLine();
+            log.info("Enter:" +
+                    "\n\"a\" to add new patient/employee, " +               //Done
+                    "\n\"r\" to remove," +                                  //Done
+                    "\n\"gp\" to get patients list," +                      //Done
+                    "\n\"ge\" for employees list," +                        //Done
+                    "\n\"c\" to call patient/employee " +                   //Done
+                    "\n\"e\" to evacuate the room," +                       //Done
+                    "\n\"m\" to set patient vital signs," +                 //Done
+                    "\n\"rv\" to request patient vital signs history," +    //Done
+                    "\n\"rc\" to request patient charges," +                //Done
+                    "\n\"s\" to schedule an appointment," +                 //Done
+                    "\n\"v\" to set employee vacation days," +              //Done
+                    "\n\"w\" to set employee worked hours," +               //Done
+                    "\n\"rp\" to request employee paycheck," +              //Done
+                    "\n\"exit\" to close de application:");                 //Done
+            command = scanner.nextLine().toLowerCase();
             if (command.equals("exit")) {
                 break;
             }
             if (command.equals("a")) {
 
-                log.info("Enter \"p\" to add patient or \"e\" for employee, \"b\" to go back:");
-                command = scanner.nextLine();
+                log.info("Enter:" +
+                        "\n\"p\" to add patient," +
+                        "\n\"e\" to add employee," +
+                        "\n\"b\" to go back:");
+                command = scanner.nextLine().toLowerCase();
 
                 switch (command) {
                     case "p":
@@ -127,7 +166,7 @@ public class Main {
                             String ID = scanner.nextLine();
                             log.info("Enter the employee's pay rate:");
                             double payRate = Double.parseDouble(scanner.nextLine());
-                            log.info("Enter the employee's working days (first 3 initials):");
+                            log.info("Enter the employee's working days separated by commas (first 3 initials):");
                             String workingDays = scanner.nextLine();
                             ArrayList<Integer> workingDaysList = convertWorkingDays(workingDays);
                             try {
@@ -149,9 +188,11 @@ public class Main {
                 }
             }
             if (command.equals("gp")) {
-                log.info("Enter \"c\" to get list filter by complexity, \"r\" for room filtered," +
-                        " \"a\" to get all patients, \"b\" to go back:");
-                command = scanner.nextLine();
+                log.info("Enter \"c\" to get list filter by complexity," +
+                        "\n\"r\" for room filtered," +
+                        "\n\"a\" to get all patients," +
+                        "\n\"b\" to go back:");
+                command = scanner.nextLine().toLowerCase();
                 Iterator<HospitalRoom> roomIterator = roomSet.iterator();
                 switch (command) {
 
@@ -164,7 +205,7 @@ public class Main {
                             HospitalRoom currentRoom = roomIterator.next();
                             partialPatientCount += currentRoom.getPatientsCount(complexity);
                             totalPatientCount += currentRoom.getPatientsCount(complexity);
-                            log.info("In the " + currentRoom.getClass() + " there are " +
+                            log.info("In the " + currentRoom + " there are " +
                                     partialPatientCount + " " + complexity + " complexity patients");
                         }
                         log.info("There are " + totalPatientCount + " " + complexity +
@@ -179,7 +220,7 @@ public class Main {
                         HospitalRoom currentRoom = searchHospitalRoom(roomSet, room, location);
                         if (currentRoom != null) {
                             totalPatientCount = currentRoom.getPatientsCount();
-                            log.info("In the " + currentRoom.getClass() + " there are " +
+                            log.info("In the " + currentRoom + " there are " +
                                     totalPatientCount + " patients");
                         }
                         break;
@@ -199,6 +240,208 @@ public class Main {
                     default:
                         log.error("Unknown command");
                         break;
+                }
+            }
+            if (command.equals("c")) {
+                log.info("Enter the desired calling room initial:");
+                String room = scanner.nextLine().toLowerCase();
+                log.info("Enter the desired calling room location (e.g. 1-a):");
+                String location = scanner.nextLine().toLowerCase();
+                log.info("Enter \"p\" to call patient or \"e\" for employee:");
+                String personType = scanner.nextLine().toLowerCase();
+                log.info("Enter the desired patient/employee name to call:");
+                String personName = scanner.nextLine().toLowerCase();
+                HospitalRoom currentRoom = searchHospitalRoom(roomSet, room, location);
+                if (currentRoom != null) {
+                    if (personType.equals("p")) {
+                        Patient calledPatient = currentRoom.searchPatient(personName);
+                        if (calledPatient != null) {
+                            calledPatient.callPerson(currentRoom);
+                        } else {
+                            log.error("Patient not found");
+                        }
+                    } else if (personType.equals("e")) {
+                        Employee calledEmployee = currentRoom.searchEmployee(personName);
+                        if (calledEmployee != null) {
+                            calledEmployee.callPerson(currentRoom);
+                        } else {
+                            log.error("Patient not found");
+                        }
+                    }
+                }
+            }
+            if (command.equals("e")) {
+                log.info("Enter the desired to evacuate room initial:");
+                String room = scanner.nextLine().toLowerCase();
+                log.info("Enter the desired to evacuate room location (e.g. 1-a):");
+                String location = scanner.nextLine().toLowerCase();
+                log.info("Enter the evacuation cause:");
+                String cause = scanner.nextLine().toLowerCase();
+                HospitalRoom currentRoom = searchHospitalRoom(roomSet, room, location);
+                if (currentRoom != null) {
+                    if (!currentRoom.getPatientsSet().isEmpty()) {
+                        for (Patient patient : currentRoom.getPatientsSet()) {
+                            patient.evacuateTheRoom(cause);
+                        }
+                    }
+                    if (!currentRoom.getEmployeeSet().isEmpty()) {
+                        for (Employee employee : currentRoom.getEmployeeSet()) {
+                            employee.evacuateTheRoom(cause);
+                        }
+                    }
+                }
+            }
+            if (command.equals("m")) {
+                log.info("Enter the desired employee name to perform the measurements:");
+                String employeeName = scanner.nextLine().toLowerCase();
+                log.info("Enter the desired patient name to receive the measurements:");
+                String patientName = scanner.nextLine().toLowerCase();
+                Employee employee = null;
+                Patient patient = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    patient = currentRoom.searchPatient(patientName);
+                    if (patient != null) {
+                        break;
+                    }
+                }
+                for (HospitalRoom currentRoom : roomSet) {
+                    employee = currentRoom.searchEmployee(employeeName);
+                    if (employee != null) {
+                        break;
+                    }
+                }
+                if (patient == null) {
+                    log.error("Patient not found");
+                } else {
+                    if (employee == null) {
+                        log.error("Employee not found");
+                    } else {
+                        employee.measureVitalSigns(patient);
+                    }
+                }
+            }
+            if (command.equals("rv")) {
+                log.info("Enter the desired patient name to request vital signs:");
+                String patientName = scanner.nextLine().toLowerCase();
+                Patient patient = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    patient = currentRoom.searchPatient(patientName);
+                    if (patient != null) {
+                        break;
+                    }
+                }
+                if (patient == null) {
+                    log.error("Patient not found");
+                } else {
+                    log.info(patient.getVitalSignsHistory());
+                }
+            }
+            if (command.equals("rc")) {
+                log.info("Enter the desired patient name to request charges:");
+                String patientName = scanner.nextLine().toLowerCase();
+                Patient patient = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    patient = currentRoom.searchPatient(patientName);
+                    if (patient != null) {
+                        break;
+                    }
+                }
+                if (patient == null) {
+                    log.error("Patient not found");
+                } else {
+                    patient.requestCharges();
+                }
+            }
+            if (command.equals("rp")) {
+                log.info("Enter the desired employee name to request pay check:");
+                String employeeName = scanner.nextLine().toLowerCase();
+                Employee employee = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    employee = currentRoom.searchEmployee(employeeName);
+                    if (employee != null) {
+                        break;
+                    }
+                }
+                if (employee == null) {
+                    log.error("Employee not found");
+                } else {
+                    log.info(employee + "has a: $" + employee.getPayCheck() + "to be paid");
+                }
+            }
+            if (command.equals("v")) {
+                log.info("Enter the desired employee name to request vacations:");
+                String employeeName = scanner.nextLine().toLowerCase();
+                Employee employee = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    employee = currentRoom.searchEmployee(employeeName);
+                    if (employee != null) {
+                        break;
+                    }
+                }
+                if (employee == null) {
+                    log.error("Employee not found");
+                } else {
+                    log.info("Please enter the start day of the employees vacation " +
+                            "(use yyyy-MM-dd format please):");
+                    String startDay = scanner.nextLine();
+                    log.info("Please enter the end day of the employees vacation " +
+                            "(use yyyy-MM-dd format please):");
+                    String endDay = scanner.nextLine();
+                    employee.setVacationDays(parseDate(startDay), parseDate(endDay));
+                }
+            }
+            if (command.equals("w")) {
+                log.info("Enter the desired employee name to set worked hours:");
+                String employeeName = scanner.nextLine().toLowerCase();
+                Employee employee = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    employee = currentRoom.searchEmployee(employeeName);
+                    if (employee != null) {
+                        break;
+                    }
+                }
+                if (employee == null) {
+                    log.error("Employee not found");
+                } else {
+                    log.info("Enter the amount of worked hours:");
+                    int workedHours = Integer.parseInt(scanner.nextLine());
+                    employee.setWorkedHours(workedHours);
+                }
+            }
+            if (command.equals("s")) {
+                log.info("Enter the desired physician name to schedule the appointment:");
+                String employeeName = scanner.nextLine().toLowerCase();
+                log.info("Enter the desired patient name to schedule the appointment:");
+                String patientName = scanner.nextLine().toLowerCase();
+                Employee employee = null;
+                Patient patient = null;
+                for (HospitalRoom currentRoom : roomSet) {
+                    patient = currentRoom.searchPatient(patientName);
+                    if (patient != null) {
+                        break;
+                    }
+                }
+                for (HospitalRoom currentRoom : roomSet) {
+                    employee = currentRoom.searchEmployee(employeeName);
+                    if (employee != null) {
+                        break;
+                    }
+                }
+                if (patient == null) {
+                    log.error("Patient not found");
+                } else {
+                    if (employee == null) {
+                        log.error("Employee not found");
+                    } else if (employee instanceof Physician) {
+                        log.info("Enter the date and time for the appointment " +
+                                "(use yyyy-MM-dd HH:mm format please):");
+                        String strDateTime = scanner.nextLine();
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                        LocalDateTime dateTime = LocalDateTime.parse(strDateTime, formatter);
+                        ((Physician) employee).scheduleAppointment(dateTime, patient);
+                    } else {
+                        log.error("Employee is not a physician");
+                    }
                 }
             }
         }
@@ -231,7 +474,7 @@ public class Main {
 
     static ArrayList<Integer> convertWorkingDays(String workingDays) {
         ArrayList<Integer> days = new ArrayList<>();
-        workingDays.toUpperCase();
+        workingDays = workingDays.toUpperCase();
         if (workingDays.contains("MON"))
             days.add(1);
         if (workingDays.contains("TUE"))
@@ -248,4 +491,12 @@ public class Main {
             days.add(7);
         return days;
     }
+
+    static LocalDate parseDate(String strDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(strDate, formatter);
+        return date;
+    }
+
+
 }

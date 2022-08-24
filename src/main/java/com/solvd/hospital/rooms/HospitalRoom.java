@@ -1,18 +1,21 @@
 package com.solvd.hospital.rooms;
 
+import com.solvd.hospital.CustomLinkedList;
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import com.solvd.hospital.exceptions.InvalidPayRateException;
 import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import com.solvd.hospital.people.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public abstract class HospitalRoom {
-
+public abstract class HospitalRoom implements IEvacuable {
+    private static final Logger log = LogManager.getLogger(HospitalRoom.class);
     protected String location;  /* Floor-sector e.g., first floor sector a: 1-a */
     protected Set<Patient> patientsSet = new LinkedHashSet<>();
     protected Set<Employee> employeeSet = new HashSet<>();
@@ -59,7 +62,9 @@ public abstract class HospitalRoom {
             InvalidPayRateException, InvalidWorkingDayException {
         switch (profession) {
             case "physician":
-                employeeSet.add(new Physician(age, gender, fullName, ID, payRate, workingDays));
+                Physician physician = new Physician(age, gender, fullName, ID, payRate, workingDays);
+                physician.initializeSchedule();
+                employeeSet.add(physician);
                 break;
             case "nurse":
                 employeeSet.add(new Nurse(age, gender, fullName, ID, payRate, workingDays));
@@ -67,5 +72,42 @@ public abstract class HospitalRoom {
             default:
                 break;
         }
+    }
+
+    public Patient searchPatient(String fullName) {
+        for (Patient patient : patientsSet) {
+            if (patient.getFullName().toLowerCase().equals(fullName)) {
+                return patient;
+            }
+        }
+        return null;
+    }
+
+    public Employee searchEmployee(String fullName) {
+        for (Employee employee : employeeSet) {
+            if (employee.getFullName().toLowerCase().equals(fullName)) {
+                return employee;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void evacuateTheRoom(String cause) {
+        for (Patient patient : patientsSet) {
+            patient.evacuateTheRoom(cause);
+        }
+        for (Employee employee : employeeSet) {
+            employee.evacuateTheRoom("cause");
+        }
+    }
+
+    //Getters
+    public Set<Patient> getPatientsSet() {
+        return patientsSet;
+    }
+
+    public Set<Employee> getEmployeeSet() {
+        return employeeSet;
     }
 }

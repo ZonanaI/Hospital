@@ -7,10 +7,9 @@ import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.TreeSet;
 
-public abstract class Employee extends Person {
+public abstract class Employee extends Person implements IEvacuable, ICallable, IDiagnosable {
 
     protected int workedHours;
     protected LocalTime entryTime;

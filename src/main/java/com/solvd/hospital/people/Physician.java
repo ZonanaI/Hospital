@@ -16,7 +16,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class Physician extends Employee implements IDiagnosable, ISchedulable<Patient>, ICallable {
+public class Physician extends Employee implements IDiagnosable, ISchedulable<Patient>, ICallable, IEvacuable {
 
     private static final Logger log = LogManager.getLogger(Physician.class);
     protected ArrayList<Procedures> doneProcedures = new ArrayList<>();
@@ -114,12 +114,9 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         log.info("Sorry, Dr:" + this.toString() + " is on vacation");
     }
 
-    public String getMedicalSpeciality() {
-        return medicalSpeciality;
-    }
-
-    public void setMedicalSpeciality(String medicalSpeciality) {
-        this.medicalSpeciality = medicalSpeciality;
+    @Override
+    public void evacuateTheRoom(String cause) {
+        log.info("Please Dr.: " + this.fullName + " evacuate the room, there´s been a " + cause);
     }
 
     public void initializeSchedule() {
@@ -192,5 +189,14 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
                 }
             }
         }
+    }
+
+    //Setters getters
+    public String getMedicalSpeciality() {
+        return medicalSpeciality;
+    }
+
+    public void setMedicalSpeciality(String medicalSpeciality) {
+        this.medicalSpeciality = medicalSpeciality;
     }
 }

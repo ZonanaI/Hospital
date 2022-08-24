@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public final class Nurse extends Employee implements IDiagnosable, ICallable {
+public final class Nurse extends Employee implements IDiagnosable, ICallable, IEvacuable {
     private static final Logger log = LogManager.getLogger(Nurse.class);
 
     public Nurse(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays)
@@ -92,5 +92,10 @@ public final class Nurse extends Employee implements IDiagnosable, ICallable {
             log.info("Please Nurse:" + this.toString() + " report to " + hospitalRoom.toString());
         }
         log.info("Sorry, Nurse:" + this.toString() + " is on vacation");
+    }
+
+    @Override
+    public void evacuateTheRoom(String cause) {
+        log.info("Please Nurse: " + this.fullName + " evacuate the room, there´s been a " + cause);
     }
 }
