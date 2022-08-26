@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,9 +18,10 @@ import java.util.Scanner;
 public final class Nurse extends Employee implements IDiagnosable, ICallable, IEvacuable {
     private static final Logger log = LogManager.getLogger(Nurse.class);
 
-    public Nurse(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays)
-            throws InvalidAgeException, InvalidPayRateException, InvalidWorkingDayException {
-        super(age, gender, fullName, ID, payRate, workingDays);
+    public Nurse(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays,
+                 LocalTime entryTime, LocalTime leavingTime) throws InvalidAgeException, InvalidPayRateException,
+            InvalidWorkingDayException {
+        super(age, gender, fullName, ID, payRate, workingDays, entryTime, leavingTime);
     }
 
     @Override

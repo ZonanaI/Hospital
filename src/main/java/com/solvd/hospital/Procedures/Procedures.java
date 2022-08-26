@@ -21,17 +21,6 @@ public class Procedures {
         totalOwedToPhysician = 0;
     }
 
-    public Procedures(String type, String ID, double cost, String patientID, String physicianID,
-                      LocalDateTime localDateTime) {
-        this.type = type;
-        this.ID = ID;
-        this.cost = cost;
-        this.patientID = patientID;
-        this.physicianID = physicianID;
-        this.localDateTime = localDateTime;
-        this.paidByPatient = false;
-    }
-
     public Procedures(String type, String ID, double cost, double physicianPayRate, String patientID,
                       String physicianID, LocalDateTime localDateTime) {
         this.type = type;

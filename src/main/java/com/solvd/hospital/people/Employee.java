@@ -19,8 +19,9 @@ public abstract class Employee extends Person implements IEvacuable, ICallable, 
     protected TreeSet<LocalDate> vacationDays = new TreeSet<>();
 
 
-    public Employee(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays)
-            throws InvalidAgeException, InvalidPayRateException, InvalidWorkingDayException {
+    public Employee(int age, String gender, String fullName, String ID, double payRate, ArrayList<Integer> workingDays,
+                    LocalTime entryTime, LocalTime leavingTime) throws InvalidAgeException, InvalidPayRateException,
+            InvalidWorkingDayException {
         super(age, gender, fullName, ID);
         if (payRate <= 0) {
             throw new InvalidPayRateException("Pay rate must be greater than zero");
@@ -31,6 +32,8 @@ public abstract class Employee extends Person implements IEvacuable, ICallable, 
             throw new InvalidWorkingDayException("Employee must have at least one working day");
         }
         this.workingDays = workingDays;
+        this.entryTime = entryTime;
+        this.leavingTime = leavingTime;
     }
 
 

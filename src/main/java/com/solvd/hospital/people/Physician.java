@@ -25,9 +25,9 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
     protected int appointmentDuration;
 
     public Physician(int age, String gender, String fullName, String ID, double payRate,
-                     ArrayList<Integer> workingDays) throws InvalidAgeException, InvalidPayRateException,
-            InvalidWorkingDayException {
-        super(age, gender, fullName, ID, payRate, workingDays);
+                     ArrayList<Integer> workingDays, LocalTime entryTime, LocalTime leavingTime)
+            throws InvalidAgeException, InvalidPayRateException, InvalidWorkingDayException {
+        super(age, gender, fullName, ID, payRate, workingDays, entryTime, leavingTime);
         this.appointmentDuration = 30;
     }
 

@@ -9,6 +9,7 @@ import com.solvd.hospital.people.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -58,16 +59,18 @@ public abstract class HospitalRoom implements IEvacuable {
     }
 
     public void addEmployeeToSet(int age, String gender, String fullName, String profession, String ID,
-                                 double payRate, ArrayList<Integer> workingDays) throws InvalidAgeException,
-            InvalidPayRateException, InvalidWorkingDayException {
+                                 double payRate, ArrayList<Integer> workingDays, LocalTime entryTime,
+                                 LocalTime leavIngTime) throws InvalidAgeException, InvalidPayRateException,
+            InvalidWorkingDayException {
         switch (profession) {
             case "physician":
-                Physician physician = new Physician(age, gender, fullName, ID, payRate, workingDays);
+                Physician physician = new Physician(age, gender, fullName, ID, payRate, workingDays, entryTime,
+                        leavIngTime);
                 physician.initializeSchedule();
                 employeeSet.add(physician);
                 break;
             case "nurse":
-                employeeSet.add(new Nurse(age, gender, fullName, ID, payRate, workingDays));
+                employeeSet.add(new Nurse(age, gender, fullName, ID, payRate, workingDays, entryTime, leavIngTime));
                 break;
             default:
                 break;
