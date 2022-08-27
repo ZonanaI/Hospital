@@ -484,3 +484,183 @@
 "w" to set employee worked hours,
 "rp" to request employee paycheck,
 "exit" to close de application:
+2022-08-27 11:33:06.350 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 11:33:06.357 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 11:33:06.359 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 11:33:06.360 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 11:33:06.360 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 11:33:06.361 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 11:33:06.363 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 11:33:12.847 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.848 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.848 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.849 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.850 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.851 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.895 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 11:35:32.982 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 11:35:32.997 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 11:37:26.820 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.331 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.340 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.343 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.345 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.345 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.470 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 11:42:11.846 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 11:42:11.861 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 12:35:59.862 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.948 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 12:37:58.479 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 12:37:58.479 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 12:39:35.583 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 12:39:35.599 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 12:39:38.668 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:

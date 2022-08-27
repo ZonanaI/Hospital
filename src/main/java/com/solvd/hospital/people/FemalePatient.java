@@ -46,29 +46,29 @@ public final class FemalePatient extends Patient {
         return " Female patient: " + fullName + ", ID: " + ID;
     }
 
-    public Patient giveBirth() throws InvalidAgeException, InvalidBloodTypeException {
-        Scanner input = new Scanner(System.in);
-        int age = 0;
-        log.info("Please enter the baby weight:");
-        double weight = input.nextDouble();
-        log.info("Please enter the baby blood type:");
-        String bloodType = input.next();
-        String gender;
-        do {
-            log.info("Please enter the baby gender:");
-            gender = input.next().toLowerCase(Locale.ROOT);
-        } while (!gender.equals("male") && !gender.equals("female"));
-        log.info("Please enter the baby full name:");
-        String fullName = input.next();
-        log.info("Please enter the baby complexity status:");
-        String complexity = input.next();
-        log.info("Please enter the baby ID number:");
-        String ID = input.next();
-        input.close();
-        if (gender.equals("male")) {
-            return new MalePatient(age, fullName, ID, complexity, bloodType);
-        } else {
-            return new FemalePatient(age, fullName, ID, complexity, bloodType);
-        }
-    }
+//    public Patient giveBirth() throws InvalidAgeException, InvalidBloodTypeException {
+//        Scanner input = new Scanner(System.in);
+//        int age = 0;
+//        log.info("Please enter the baby weight:");
+//        double weight = input.nextDouble();
+//        log.info("Please enter the baby blood type:");
+//        String bloodType = input.next();
+//        String gender;
+//        do {
+//            log.info("Please enter the baby gender:");
+//            gender = input.next().toLowerCase(Locale.ROOT);
+//        } while (!gender.equals("male") && !gender.equals("female"));
+//        log.info("Please enter the baby full name:");
+//        String fullName = input.next();
+//        log.info("Please enter the baby complexity status:");
+//        String complexity = input.next();
+//        log.info("Please enter the baby ID number:");
+//        String ID = input.next();
+//        input.close();
+//        if (gender.equals("male")) {
+//            return new MalePatient(age, fullName, ID, complexity, bloodType);
+//        } else {
+//            return new FemalePatient(age, fullName, ID, complexity, bloodType);
+//        }
+//    }
 }

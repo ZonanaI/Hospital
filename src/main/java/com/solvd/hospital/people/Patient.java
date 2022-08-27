@@ -14,7 +14,7 @@ import java.util.*;
 
 public abstract class Patient extends Person implements ISchedulable<Physician>, ICallable, IChargeable, IEvacuable {
     private static final Logger log = LogManager.getLogger(Patient.class);
-    protected String bloodType;
+    protected BloodType bloodType;
     protected String complexity;
     protected int systolicPressure;
     protected int diastolicPressure;
@@ -38,15 +38,16 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
         return "Patient: " + fullName + ", SSN: " + ID;
     }
 
-    public Patient(int age, String gender, String fullName, String ID, String complexity, String bloodType)
-            throws InvalidAgeException, InvalidBloodTypeException {
+    public Patient(int age, String gender, String fullName, String ID, String complexity,
+                   String bloodType) throws InvalidAgeException, InvalidBloodTypeException {
         super(age, gender, fullName, ID);
         this.complexity = complexity;
-        if (!Arrays.asList(BLOOD_TYPES).contains(bloodType)) {
-            throw new InvalidBloodTypeException("Invalid blood type, must be any of:" +
-                    " O-, O+, B-, B+, A-, A+, AB-, AB+");
+        if (!Arrays.stream(BloodType.values()).anyMatch(e -> e.name().equals(bloodType))) {
+            throw new InvalidBloodTypeException("Invalid blood type, must be any of:\n" +
+                    "O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE," +
+                    "AB_POSITIVE");
         }
-        this.bloodType = bloodType;
+        this.bloodType = BloodType.valueOf(bloodType);
         this.amountCharged = 0;
     }
 
@@ -85,6 +86,14 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
     @Override
     public void evacuateTheRoom(String cause) {
         log.info("Please: " + this.fullName + " evacuate the room, there´s been a " + cause);
+    }
+
+    public void canReceiveFrom(Patient patient) {
+        if (this.bloodType.getCanReceiveFrom().contains(patient.bloodType.toString())) {
+            log.info(this.getFullName() + " can receive blood from: " + patient.getFullName());
+        } else {
+            log.info(this.getFullName() + " can't receive blood from: " + patient.getFullName());
+        }
     }
 
     //Setters and getters

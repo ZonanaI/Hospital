@@ -1,13 +1,10 @@
 package com.solvd.hospital.rooms;
 
-import com.solvd.hospital.CustomLinkedList;
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import com.solvd.hospital.exceptions.InvalidPayRateException;
 import com.solvd.hospital.exceptions.InvalidWorkingDayException;
 import com.solvd.hospital.people.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -16,7 +13,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public abstract class HospitalRoom implements IEvacuable {
-    private static final Logger log = LogManager.getLogger(HospitalRoom.class);
     protected String location;  /* Floor-sector e.g., first floor sector a: 1-a */
     protected Set<Patient> patientsSet = new LinkedHashSet<>();
     protected Set<Employee> employeeSet = new HashSet<>();
@@ -49,7 +45,8 @@ public abstract class HospitalRoom implements IEvacuable {
     }
 
     public void addPatientToSet(int age, String gender, String fullName, String ID, String complexity,
-                                String bloodType) throws InvalidAgeException, InvalidBloodTypeException {
+                                String bloodType) throws InvalidAgeException,
+            InvalidBloodTypeException {
         if (gender.equals("male")) {
             patientsSet.add(new MalePatient(age, fullName, ID, complexity, bloodType));
         } else {
@@ -60,17 +57,17 @@ public abstract class HospitalRoom implements IEvacuable {
 
     public void addEmployeeToSet(int age, String gender, String fullName, String profession, String ID,
                                  double payRate, ArrayList<Integer> workingDays, LocalTime entryTime,
-                                 LocalTime leavIngTime) throws InvalidAgeException, InvalidPayRateException,
+                                 LocalTime leavingTime) throws InvalidAgeException, InvalidPayRateException,
             InvalidWorkingDayException {
         switch (profession) {
             case "physician":
                 Physician physician = new Physician(age, gender, fullName, ID, payRate, workingDays, entryTime,
-                        leavIngTime);
+                        leavingTime);
                 physician.initializeSchedule();
                 employeeSet.add(physician);
                 break;
             case "nurse":
-                employeeSet.add(new Nurse(age, gender, fullName, ID, payRate, workingDays, entryTime, leavIngTime));
+                employeeSet.add(new Nurse(age, gender, fullName, ID, payRate, workingDays, entryTime, leavingTime));
                 break;
             default:
                 break;
