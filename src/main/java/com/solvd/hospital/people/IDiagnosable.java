@@ -1,5 +1,5 @@
 package com.solvd.hospital.people;
 
-public interface IDiagnostics {
+public interface IDiagnosable {
     void measureVitalSigns(Patient patient);
 }

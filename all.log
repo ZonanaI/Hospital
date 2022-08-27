@@ -1,0 +1,666 @@
+2022-08-22 17:21:39.843 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:21:39.850 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:22:02.339 [main] INFO  com.solvd.hospital.Main - Please specify the location of the room (Floor-sector e.g., first floor sector A: 1-a)
+2022-08-22 17:22:08.689 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:22:08.689 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:22:16.912 [main] INFO  com.solvd.hospital.Main - Please specify the location of the room (Floor-sector e.g., first floor sector A: 1-a)
+2022-08-22 17:22:20.037 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:22:20.037 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:22:29.522 [main] INFO  com.solvd.hospital.Main - Please specify the location of the room (Floor-sector e.g., first floor sector A: 1-a)
+2022-08-22 17:22:32.440 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:22:32.441 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:22:37.499 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:22:44.872 [main] INFO  com.solvd.hospital.Main - Enter "p" to add patient or "e" for employee, "b" to go back:
+2022-08-22 17:22:47.710 [main] INFO  com.solvd.hospital.Main - Enter the room initial the patient will be:
+2022-08-22 17:22:59.472 [main] INFO  com.solvd.hospital.Main - Enter the sector room the patient will be (e.g. 1-a):
+2022-08-22 17:23:02.289 [main] INFO  com.solvd.hospital.Main - Enter the patient's age:
+2022-08-22 17:23:05.935 [main] INFO  com.solvd.hospital.Main - Enter the patient's gender:
+2022-08-22 17:23:09.135 [main] INFO  com.solvd.hospital.Main - Enter the patient's full name:
+2022-08-22 17:23:24.884 [main] INFO  com.solvd.hospital.Main - Enter the patient's ID:
+2022-08-22 17:23:38.613 [main] INFO  com.solvd.hospital.Main - Enter the patient's complexity status:
+2022-08-22 17:23:41.790 [main] INFO  com.solvd.hospital.Main - Enter the patient's bloodType:
+2022-08-22 17:23:49.926 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:23:55.271 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity, "r" for room filtered, "a" to get all patients, "b" to go back:
+2022-08-22 17:23:59.459 [main] INFO  com.solvd.hospital.Main - Enter the desired room initial:
+2022-08-22 17:24:01.809 [main] INFO  com.solvd.hospital.Main - Enter the desired room location (e.g. 1-a):
+2022-08-22 17:24:05.013 [main] INFO  com.solvd.hospital.Main - In the class com.solvd.hospital.rooms.ConsultingRoom there are 1 patients
+2022-08-22 17:24:05.014 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:24:28.484 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:33:57.278 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:33:57.286 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:34:02.137 [main] INFO  com.solvd.hospital.Main - Please specify the location of the room (Floor-sector e.g., first floor sector A: 1-a)
+2022-08-22 17:34:07.065 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:34:07.065 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:34:10.100 [main] INFO  com.solvd.hospital.Main - Please specify the location of the room (Floor-sector e.g., first floor sector A: 1-a)
+2022-08-22 17:34:12.626 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-22 17:34:12.626 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-22 17:34:14.362 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:34:22.362 [main] INFO  com.solvd.hospital.Main - Enter "p" to add patient or "e" for employee, "b" to go back:
+2022-08-22 17:34:24.218 [main] INFO  com.solvd.hospital.Main - Enter the room initial the patient will be:
+2022-08-22 17:34:26.924 [main] INFO  com.solvd.hospital.Main - Enter the sector room the patient will be (e.g. 1-a):
+2022-08-22 17:34:29.674 [main] INFO  com.solvd.hospital.Main - Enter the patient's age:
+2022-08-22 17:34:31.962 [main] INFO  com.solvd.hospital.Main - Enter the patient's gender:
+2022-08-22 17:34:35.911 [main] INFO  com.solvd.hospital.Main - Enter the patient's full name:
+2022-08-22 17:34:47.186 [main] INFO  com.solvd.hospital.Main - Enter the patient's ID:
+2022-08-22 17:34:51.986 [main] INFO  com.solvd.hospital.Main - Enter the patient's complexity status:
+2022-08-22 17:34:54.674 [main] INFO  com.solvd.hospital.Main - Enter the patient's bloodType:
+2022-08-22 17:35:00.416 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:35:04.199 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity, "r" for room filtered, "a" to get all patients, "b" to go back:
+2022-08-22 17:35:07.915 [main] INFO  com.solvd.hospital.Main - There are 1 patients in the hospital
+2022-08-22 17:35:07.915 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:35:10.836 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity, "r" for room filtered, "a" to get all patients, "b" to go back:
+2022-08-22 17:35:12.999 [main] INFO  com.solvd.hospital.Main - Enter the desired complexity filter:
+2022-08-22 17:35:15.357 [main] INFO  com.solvd.hospital.Main - In the Consulting room 1-a there are 1 low complexity patients
+2022-08-22 17:35:15.358 [main] INFO  com.solvd.hospital.Main - In the Recovery room 2-a there are 0 low complexity patients
+2022-08-22 17:35:15.372 [main] INFO  com.solvd.hospital.Main - There are 1 low patients in the hospital
+2022-08-22 17:35:15.372 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-22 17:35:36.011 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity, "r" for room filtered, "a" to get all patients, "b" to go back:
+2022-08-22 17:35:37.755 [main] INFO  com.solvd.hospital.Main - Enter the desired room initial:
+2022-08-22 17:35:39.847 [main] INFO  com.solvd.hospital.Main - Enter the desired room location (e.g. 1-a):
+2022-08-22 17:35:43.374 [main] INFO  com.solvd.hospital.Main - In the Consulting room 1-a there are 1 patients
+2022-08-22 17:35:43.375 [main] INFO  com.solvd.hospital.Main - Enter "a" to add new patient/employee, "r" to remove, "gp" to get patients list, "ge" for employees list, "c" to call patient/employee 
+"exit" to close de application:
+2022-08-23 16:27:16.592 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-23 16:27:16.607 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-23 16:27:16.607 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-23 16:27:16.607 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-23 16:27:16.607 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-23 16:38:32.485 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-23 16:38:32.492 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-23 16:38:32.493 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-23 16:38:32.493 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-23 16:38:32.494 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-23 16:38:32.494 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-23 16:39:52.081 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-23 16:39:52.089 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-23 16:39:52.090 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-23 16:39:52.090 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-23 16:39:52.091 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-23 16:39:52.091 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-23 16:45:46.196 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-23 16:45:46.207 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-23 16:45:46.208 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-23 16:45:46.208 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-23 16:45:46.209 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-23 16:45:46.209 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-23 16:49:58.395 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-23 16:49:58.403 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-23 16:49:58.405 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-23 16:49:58.406 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-23 16:49:58.406 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-23 16:49:58.407 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-23 16:49:58.407 [main] INFO  com.solvd.hospital.Main - Enter "c" to add new Consulting room, "d": Delivery room, "e" Emergency room, "i" Intensive care room, "m" Maternity room, 
+"n" Nursery room, "r" Recovery room, "s" Surgery room. Enter "exit" to close the application, "f" to end rooms configuration:
+2022-08-26 09:20:35.267 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 09:20:35.283 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 09:20:35.283 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 09:20:35.283 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 09:20:35.283 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 09:20:35.283 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 09:20:35.283 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 09:21:06.496 [main] ERROR com.solvd.hospital.Main - Room not found
+2022-08-26 09:21:06.512 [main] ERROR com.solvd.hospital.Main - Room not found
+2022-08-26 09:21:06.512 [main] ERROR com.solvd.hospital.Main - Room not found
+2022-08-26 09:21:06.512 [main] ERROR com.solvd.hospital.Main - Room not found
+2022-08-26 09:21:06.512 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"r" to remove,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:23:07.252 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 09:23:07.252 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 09:23:07.267 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 09:23:07.267 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 09:23:07.267 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 09:23:07.267 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 09:23:07.267 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 09:23:14.254 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"r" to remove,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:23:23.401 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-26 09:23:26.620 [main] INFO  com.solvd.hospital.Main - There are 6 patients in the hospital
+2022-08-26 09:23:26.620 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"r" to remove,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:23:33.448 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-26 09:23:36.947 [main] INFO  com.solvd.hospital.Main - Enter the desired room initial:
+2022-08-26 09:23:39.736 [main] INFO  com.solvd.hospital.Main - Enter the desired room location (e.g. 1-a):
+2022-08-26 09:23:42.528 [main] INFO  com.solvd.hospital.Main - In the Consulting room 1-a there are 2 patients
+2022-08-26 09:23:42.528 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"r" to remove,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:23:55.955 [main] INFO  com.solvd.hospital.Main - Enter "c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-26 09:24:37.347 [main] INFO  com.solvd.hospital.Main - Enter the desired complexity filter:
+2022-08-26 09:24:40.185 [main] INFO  com.solvd.hospital.Main - In the Recovery room 2-b there are 0 low complexity patients
+2022-08-26 09:24:40.185 [main] INFO  com.solvd.hospital.Main - In the Intensive care room 2-c there are 0 low complexity patients
+2022-08-26 09:24:40.185 [main] INFO  com.solvd.hospital.Main - In the Delivery room 2-a there are 0 low complexity patients
+2022-08-26 09:24:40.200 [main] INFO  com.solvd.hospital.Main - In the Maternity room 2-b there are 0 low complexity patients
+2022-08-26 09:24:40.200 [main] INFO  com.solvd.hospital.Main - In the Surgery room 2-a there are 0 low complexity patients
+2022-08-26 09:24:40.200 [main] INFO  com.solvd.hospital.Main - In the Consulting room 1-a there are 2 low complexity patients
+2022-08-26 09:24:40.200 [main] INFO  com.solvd.hospital.Main - In the Nursery room 2-b there are 0 low complexity patients
+2022-08-26 09:24:40.232 [main] INFO  com.solvd.hospital.Main - There are 2 low patients in the hospital
+2022-08-26 09:24:40.247 [main] INFO  com.solvd.hospital.Main - Enter the desired calling room initial:
+2022-08-26 09:52:25.896 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 09:52:25.912 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 09:52:25.912 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 09:52:25.912 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 09:52:25.912 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 09:52:25.912 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 09:52:25.912 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 09:52:35.955 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:52:43.353 [main] INFO  com.solvd.hospital.Main - Enter 
+"c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-26 09:52:48.149 [main] INFO  com.solvd.hospital.Main - Enter the desired complexity filter:
+2022-08-26 09:52:51.352 [main] INFO  com.solvd.hospital.Main - In the Maternity room 2-b there are 0 low complexity patients
+2022-08-26 09:52:51.352 [main] INFO  com.solvd.hospital.Main - In the Consulting room 1-a there are 2 low complexity patients
+2022-08-26 09:52:51.352 [main] INFO  com.solvd.hospital.Main - In the Delivery room 2-a there are 0 low complexity patients
+2022-08-26 09:52:51.352 [main] INFO  com.solvd.hospital.Main - In the Nursery room 2-b there are 0 low complexity patients
+2022-08-26 09:52:51.352 [main] INFO  com.solvd.hospital.Main - In the Surgery room 2-a there are 0 low complexity patients
+2022-08-26 09:52:51.368 [main] INFO  com.solvd.hospital.Main - In the Recovery room 2-b there are 0 low complexity patients
+2022-08-26 09:52:51.368 [main] INFO  com.solvd.hospital.Main - In the Intensive care room 2-c there are 0 low complexity patients
+2022-08-26 09:52:51.368 [main] INFO  com.solvd.hospital.Main - There are 2 low patients in the hospital
+2022-08-26 09:52:51.368 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:53:52.042 [main] INFO  com.solvd.hospital.Main - Enter the desired to evacuate room initial:
+2022-08-26 09:54:00.380 [main] INFO  com.solvd.hospital.Main - Enter the desired to evacuate room location (e.g. 1-a):
+2022-08-26 09:54:02.927 [main] INFO  com.solvd.hospital.Main - Enter the evacuation cause:
+2022-08-26 09:54:07.807 [main] INFO  com.solvd.hospital.people.Patient - Please: Leonard Chapman evacuate the room, there´s been a fire
+2022-08-26 09:54:07.807 [main] INFO  com.solvd.hospital.people.Patient - Please: Briana Garcia evacuate the room, there´s been a fire
+2022-08-26 09:54:07.807 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 09:57:49.609 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to request pay check:
+2022-08-26 09:58:02.461 [main] ERROR com.solvd.hospital.Main - Employee not found
+2022-08-26 09:58:02.461 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 10:01:01.751 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 10:01:01.751 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 10:01:01.751 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 10:01:01.751 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 10:01:01.751 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 10:01:01.751 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 10:01:01.751 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 10:01:31.966 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 10:02:09.910 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 10:02:09.926 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 10:02:09.926 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 10:02:09.926 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 10:02:09.926 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 10:02:09.926 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 10:02:09.926 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 10:06:12.156 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 10:07:05.924 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 10:07:05.940 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 10:07:05.940 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 10:07:05.940 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 10:07:05.940 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 10:07:05.940 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 10:07:05.940 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 10:09:15.128 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 10:09:15.144 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 10:09:15.144 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 10:09:15.144 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 10:09:15.144 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 10:09:15.144 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 10:09:15.144 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 10:45:25.429 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-26 10:45:25.445 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-26 10:45:25.445 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-26 10:45:25.445 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-26 10:45:25.445 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-26 10:45:25.445 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-26 10:45:25.445 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-26 10:45:30.871 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-26 10:45:40.766 [main] INFO  com.solvd.hospital.Main - Enter the desired to evacuate room initial:
+2022-08-26 10:45:43.566 [main] INFO  com.solvd.hospital.Main - Enter the desired to evacuate room location (e.g. 1-a):
+2022-08-26 10:45:45.538 [main] INFO  com.solvd.hospital.Main - Enter the evacuation cause:
+2022-08-26 10:45:48.746 [main] INFO  com.solvd.hospital.people.Patient - Please: Leonard Chapman evacuate the room, there´s been a fire
+2022-08-26 10:45:48.746 [main] INFO  com.solvd.hospital.people.Patient - Please: Briana Garcia evacuate the room, there´s been a fire
+2022-08-26 10:45:48.746 [main] INFO  com.solvd.hospital.people.Physician - Please Dr.: John Smith evacuate the room, there´s been a fire
+2022-08-26 10:45:48.746 [main] INFO  com.solvd.hospital.people.Physician - Please Dr.: Mary Jo Robbins evacuate the room, there´s been a fire
+2022-08-26 10:45:48.746 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 11:33:06.350 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 11:33:06.357 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 11:33:06.359 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 11:33:06.360 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 11:33:06.360 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 11:33:06.361 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 11:33:06.363 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 11:33:12.847 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.848 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.848 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.849 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.850 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.851 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of: O-, O+, B-, B+, A-, A+, AB-, AB+
+2022-08-27 11:33:12.895 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 11:35:32.982 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 11:35:32.997 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 11:35:32.997 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 11:37:26.820 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.331 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.340 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.343 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.345 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.345 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 11:40:49.470 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 11:42:11.846 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 11:42:11.861 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 11:42:11.861 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 12:35:59.862 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.869 [main] ERROR com.solvd.hospital.Main - Invalid blood type, must be any of:
+O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE,AB_POSITIVE
+2022-08-27 12:35:59.948 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-27 12:37:58.479 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 12:37:58.479 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 12:37:58.494 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-27 12:39:35.583 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-27 12:39:35.583 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-27 12:39:35.599 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients and employees
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-27 12:39:38.668 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:

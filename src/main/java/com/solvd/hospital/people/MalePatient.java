@@ -1,10 +1,14 @@
 package com.solvd.hospital.people;
 
+import com.solvd.hospital.exceptions.InvalidAgeException;
+import com.solvd.hospital.exceptions.InvalidBloodTypeException;
+
 public final class MalePatient extends Patient {
 
 
-    public MalePatient (int age, String fullName, String ID, String complexity, String bloodType) {
-        super(age, "male",fullName, ID, complexity, bloodType);
+    public MalePatient(int age, String fullName, String ID, String complexity, String bloodType)
+            throws InvalidAgeException, InvalidBloodTypeException {
+        super(age, "male", fullName, ID, complexity, bloodType);
     }
 
     @Override
@@ -12,8 +16,7 @@ public final class MalePatient extends Patient {
         int socialSecurityNumber = -1;
         try {
             socialSecurityNumber = Integer.parseInt(this.ID);
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         return socialSecurityNumber;
@@ -21,11 +24,11 @@ public final class MalePatient extends Patient {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj){
+        if (this == obj) {
             return true;
         }
 
-        if(obj == null || obj.getClass()!= this.getClass()){
+        if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
 
