@@ -1,7 +1,7 @@
 .idea
 build
 out
-hospital.iml
+Hospital.iml
 pom.xml
 target
 logs

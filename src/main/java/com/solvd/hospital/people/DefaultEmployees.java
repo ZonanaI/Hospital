@@ -1,6 +1,5 @@
 package com.solvd.hospital.people;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public enum DefaultEmployees {
@@ -24,17 +23,17 @@ public enum DefaultEmployees {
             25.0, "MON, TUE, WED, THU, FRI", LocalTime.of(8, 0),
             LocalTime.of(17, 0, 0), "r", "2-b"),
     ;
-    private int age;
-    private String gender;
-    private String fullName;
-    private String profession;
-    private String ID;
-    private double payRate;
-    private String workingDays;
-    private LocalTime entryTime;
-    private LocalTime leavingTime;
-    private String roomInitial;
-    private String sector;
+    private final int age;
+    private final String gender;
+    private final String fullName;
+    private final String profession;
+    private final String ID;
+    private final double payRate;
+    private final String workingDays;
+    private final LocalTime entryTime;
+    private final LocalTime leavingTime;
+    private final String roomInitial;
+    private final String sector;
 
     DefaultEmployees(int age, String gender, String fullName, String profession, String ID,
                      double payRate, String workingDays, LocalTime entryTime, LocalTime leavingTime,

@@ -74,5 +74,9 @@ public abstract class Person {
     public void setIsAlive(boolean alive) {
         this.isAlive = alive;
     }
+
+    public String getID() {
+        return ID;
+    }
 }
 

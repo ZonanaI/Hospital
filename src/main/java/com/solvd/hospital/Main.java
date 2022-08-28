@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
+import com.solvd.hospital.Procedures.DefaultProcedures;
 import com.solvd.hospital.exceptions.InvalidAgeException;
 import com.solvd.hospital.exceptions.InvalidBloodTypeException;
 import com.solvd.hospital.exceptions.InvalidPayRateException;
@@ -39,7 +40,7 @@ public class Main {
         while (!command.toLowerCase(Locale.ROOT).equals("f")) {
             log.info("Initial configuration of hospital rooms");
             log.info("Enter:" +
-                    "\n\"de\" to load default rooms, patients and employees" +
+                    "\n\"de\" to load default rooms, patients, employees and procedures" +
                     "\n\"c\" to add new Consulting room," +
                     "\n\"d\": Delivery room," +
                     "\n\"e\" Emergency room," +
@@ -91,6 +92,18 @@ public class Main {
                         } catch (InvalidAgeException | InvalidPayRateException | InvalidWorkingDayException e) {
                             log.error(e.getMessage());
                         }
+                    }
+                }
+
+                for (DefaultProcedures dP :
+                        DefaultProcedures.values()) {
+                    Physician physician = searchPhysicianByID(roomSet, dP.getPhysicianID());
+                    if (physician != null) {
+                        physician.addProcedure(dP.getType(), dP.getPatientID(), dP.getLocalDateTime());
+                    }
+                    Patient patient = searchPatientByID(roomSet, dP.getPatientID());
+                    if (patient != null) {
+                        patient.addProcedure(dP.getType(), dP.getPhysicianID(), dP.getLocalDateTime());
                     }
                 }
                 break;
@@ -225,6 +238,9 @@ public class Main {
                                 totalPatientCount += currentRoom.getPatientsCount(complexity);
                                 log.info("In the " + currentRoom + " there are " +
                                         partialPatientCount + " " + complexity + " complexity patients");
+                                if (!currentRoom.getPatientsSet().isEmpty()) {
+                                    currentRoom.getPatientsSet().forEach(i -> log.info("Patient: " + i));
+                                }
                             }
                             log.info("There are " + totalPatientCount + " " + complexity +
                                     " patients in the hospital");
@@ -240,6 +256,9 @@ public class Main {
                                 totalPatientCount = currentRoom.getPatientsCount();
                                 log.info("In the " + currentRoom + " there are " +
                                         totalPatientCount + " patients");
+                                if (!currentRoom.getPatientsSet().isEmpty()) {
+                                    currentRoom.getPatientsSet().forEach(i -> log.info("Patient: " + i));
+                                }
                             }
                             break;
 
@@ -250,6 +269,10 @@ public class Main {
                                 totalPatientCount += currentRoom.getPatientsCount();
                             }
                             log.info("There are " + totalPatientCount + " patients in the hospital");
+
+                            roomSet.forEach(j -> j.getPatientsSet().forEach(i -> log.info("Patient: " + i +
+                                    " in " + j)));
+
                             break;
 
                         case "b":
@@ -259,6 +282,10 @@ public class Main {
                             log.error("Unknown command");
                             break;
                     }
+                    break;
+
+                case "ge":
+                    roomSet.forEach(j -> j.getEmployeeSet().forEach(i -> log.info(i + " in " + j)));
                     break;
 
                 case "c":
@@ -273,14 +300,14 @@ public class Main {
                     HospitalRoom currentRoom = searchHospitalRoom(roomSet, room, location);
                     if (currentRoom != null) {
                         if (personType.equals("p")) {
-                            Patient calledPatient = searchPatient(roomSet, personName);
+                            Patient calledPatient = searchPatientByName(roomSet, personName);
                             if (calledPatient != null) {
                                 calledPatient.callPerson(currentRoom);
                             } else {
                                 log.error("Patient not found");
                             }
                         } else if (personType.equals("e")) {
-                            Employee calledEmployee = searchEmployee(roomSet, personName);
+                            Employee calledEmployee = searchEmployeeByName(roomSet, personName);
                             if (calledEmployee != null) {
                                 calledEmployee.callPerson(currentRoom);
                             } else {
@@ -321,8 +348,8 @@ public class Main {
                     String employeeName = scanner.nextLine().toLowerCase();
                     log.info("Enter the desired patient name to receive the measurements:");
                     String patientName = scanner.nextLine().toLowerCase();
-                    Employee employee = searchEmployee(roomSet, employeeName);
-                    Patient patient = searchPatient(roomSet, patientName);
+                    Employee employee = searchEmployeeByName(roomSet, employeeName);
+                    Patient patient = searchPatientByName(roomSet, patientName);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -336,7 +363,7 @@ public class Main {
                 case "rv":
                     log.info("Enter the desired patient name to request vital signs:");
                     patientName = scanner.nextLine().toLowerCase();
-                    patient = searchPatient(roomSet, patientName);
+                    patient = searchPatientByName(roomSet, patientName);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -344,9 +371,9 @@ public class Main {
                     }
                     break;
                 case "rc":
-                    log.info("Enter the desired patient name to request charges:");
+                    log.info("Enter the desired patient ID to request charges:");
                     patientName = scanner.nextLine().toLowerCase();
-                    patient = searchPatient(roomSet, patientName);
+                    patient = searchPatientByID(roomSet, patientName);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -358,8 +385,8 @@ public class Main {
                     employeeName = scanner.nextLine().toLowerCase();
                     log.info("Enter the desired patient name to schedule the appointment:");
                     patientName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployee(roomSet, employeeName);
-                    patient = searchPatient(roomSet, patientName);
+                    employee = searchEmployeeByName(roomSet, employeeName);
+                    patient = searchPatientByName(roomSet, patientName);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -381,7 +408,7 @@ public class Main {
                 case "v":
                     log.info("Enter the desired employee name to request vacations:");
                     employeeName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployee(roomSet, employeeName);
+                    employee = searchEmployeeByName(roomSet, employeeName);
                     if (employee == null) {
                         log.error("Employee not found");
                     } else {
@@ -398,7 +425,7 @@ public class Main {
                 case "w":
                     log.info("Enter the desired employee name to set worked hours:");
                     employeeName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployee(roomSet, employeeName);
+                    employee = searchEmployeeByName(roomSet, employeeName);
                     if (employee == null) {
                         log.error("Employee not found");
                     } else {
@@ -411,11 +438,11 @@ public class Main {
                 case "rp":
                     log.info("Enter the desired employee name to request pay check:");
                     employeeName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployee(roomSet, employeeName);
+                    employee = searchEmployeeByName(roomSet, employeeName);
                     if (employee == null) {
                         log.error("Employee not found");
                     } else {
-                        log.info(employee + "has a: $" + employee.getPayCheck() + "to be paid");
+                        log.info(employee + " has a: $" + employee.getPayCheck() + "to be paid");
                     }
                     break;
 
@@ -424,8 +451,8 @@ public class Main {
                     String receivingPatientName = scanner.nextLine().toLowerCase();
                     log.info("Enter the giving blood patient name to check compatibility:");
                     String givingPatientName = scanner.nextLine().toLowerCase();
-                    Patient receivingPatient = searchPatient(roomSet, receivingPatientName);
-                    Patient givingPatient = searchPatient(roomSet, givingPatientName);
+                    Patient receivingPatient = searchPatientByName(roomSet, receivingPatientName);
+                    Patient givingPatient = searchPatientByName(roomSet, givingPatientName);
                     if (receivingPatient == null) {
                         log.error("Receiving patient not found");
                     } else {
@@ -514,7 +541,7 @@ public class Main {
         return LocalDate.parse(strDate, formatter);
     }
 
-    static Patient searchPatient(Set<HospitalRoom> roomSet, String fullName) {
+    static Patient searchPatientByName(Set<HospitalRoom> roomSet, String fullName) {
         for (HospitalRoom room :
                 roomSet) {
             for (Patient patient :
@@ -527,13 +554,41 @@ public class Main {
         return null;
     }
 
-    static Employee searchEmployee(Set<HospitalRoom> roomSet, String fullName) {
+    static Patient searchPatientByID(Set<HospitalRoom> roomSet, String ID) {
+        for (HospitalRoom room :
+                roomSet) {
+            for (Patient patient :
+                    room.getPatientsSet()) {
+                if (patient.getID().toLowerCase().equals(ID)) {
+                    return patient;
+                }
+            }
+        }
+        return null;
+    }
+
+    static Employee searchEmployeeByName(Set<HospitalRoom> roomSet, String fullName) {
         for (HospitalRoom room :
                 roomSet) {
             for (Employee employee :
                     room.getEmployeeSet()) {
                 if (employee.getFullName().toLowerCase().equals(fullName)) {
                     return employee;
+                }
+            }
+        }
+        return null;
+    }
+
+    static Physician searchPhysicianByID(Set<HospitalRoom> roomSet, String ID) {
+        for (HospitalRoom room :
+                roomSet) {
+            for (Employee employee :
+                    room.getEmployeeSet()) {
+                if (employee.getID().toLowerCase().equals(ID)) {
+                    if (employee instanceof Physician) {
+                        return ((Physician) employee);
+                    }
                 }
             }
         }

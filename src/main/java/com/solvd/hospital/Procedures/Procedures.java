@@ -64,8 +64,8 @@ public class Procedures {
         return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
     }
 
-    public static Procedures addMinorSurgeryProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
-        String type = "minor surgery";
+    public static Procedures addSurgeryProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+        String type = "surgery";
         String ID = "022";
         double cost = 1500;
         double physicianPayRate = 375;

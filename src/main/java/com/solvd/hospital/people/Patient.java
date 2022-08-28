@@ -42,7 +42,7 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
                    String bloodType) throws InvalidAgeException, InvalidBloodTypeException {
         super(age, gender, fullName, ID);
         this.complexity = complexity;
-        if (!Arrays.stream(BloodType.values()).anyMatch(e -> e.name().equals(bloodType))) {
+        if (Arrays.stream(BloodType.values()).noneMatch(e -> e.name().equals(bloodType))) {
             throw new InvalidBloodTypeException("Invalid blood type, must be any of:\n" +
                     "O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE," +
                     "AB_POSITIVE");
@@ -58,7 +58,7 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
 
     @Override
     public void callPerson(HospitalRoom hospitalRoom) {
-        log.info("Please patient:" + this.toString() + "report to " + hospitalRoom.toString());
+        log.info("Please patient:" + this + "report to " + hospitalRoom.toString());
     }
 
     @Override
@@ -70,7 +70,7 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
             Procedures currentProcedure = proceduresIterator.next();
             if (!currentProcedure.isPaidByPatient()) {
                 log.info("You have a: " + currentProcedure.getType() + " procedure to pay which costs: " +
-                        currentProcedure.getCost() + ". Press 1 to pay it know, any other to pay later");
+                        currentProcedure.getCost() + ".\nPress 1 to pay it know, any other to pay later");
                 String command = scanner.nextLine();
                 if (command.equals("1")) {
                     currentProcedure.setPaidByPatient(true);
@@ -80,7 +80,6 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
             }
         }
         log.info("You have a: $" + totalRemaining + " remaining to pay");
-        scanner.close();
     }
 
     @Override
@@ -164,4 +163,24 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
         this.vitalSignsHistory = vitalSignsHistory;
     }
 
+    public void addProcedure(String type, String physicianID, LocalDateTime dateTime) {
+        switch (type) {
+            case "diagnostic":
+                receivedProcedures.add(Procedures.addDiagnosticProcedure(this.ID, physicianID, dateTime));
+                break;
+
+            case "birth":
+                receivedProcedures.add(Procedures.addBirthProcedure(this.ID, physicianID, dateTime));
+                break;
+
+            case "anesthesia":
+                receivedProcedures.add(Procedures.addAnesthesiaProcedure(this.ID, physicianID, dateTime));
+                break;
+
+            case "surgery":
+                receivedProcedures.add(Procedures.addSurgeryProcedure(this.ID, physicianID, dateTime));
+                break;
+        }
+
+    }
 }

@@ -64,15 +64,15 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
     @Override
     public double getPayCheck() {
         double proceduresPay = 0;
-        Iterator<Procedures> proceduresIterator = doneProcedures.iterator();
-        while (proceduresIterator.hasNext()) {
-            Procedures currentProcedure = proceduresIterator.next();
+        for (Procedures currentProcedure : doneProcedures) {
             if (!currentProcedure.isPaidToPhysician()) {
                 proceduresPay += currentProcedure.getPhysicianPayRate();
                 currentProcedure.setPaidToPhysician(true);
             }
         }
-        return workedHours * payRate + proceduresPay;
+        int paidHours = workedHours;
+        workedHours = 0;
+        return paidHours * payRate + proceduresPay;
     }
 
     @Override
@@ -82,36 +82,34 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
 
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        stringBuilder.append("\n" + dtf.format(now));
+        stringBuilder.append("\n").append(dtf.format(now));
         log.info("Please enter the measured systolic pressure:");
         patient.setSystolicPressure(scanner.nextInt());
-        stringBuilder.append("\nSystolic Pressure: " + patient.getSystolicPressure());
+        stringBuilder.append("\nSystolic Pressure: ").append(patient.getSystolicPressure());
         log.info("Please enter the measured diastolic pressure:");
         patient.setDiastolicPressure(scanner.nextInt());
-        stringBuilder.append("\nDiastolic Pressure: " + patient.getDiastolicPressure());
+        stringBuilder.append("\nDiastolic Pressure: ").append(patient.getDiastolicPressure());
         log.info("Please enter the measured oxygen level:");
         try {
             patient.setOxygenLevel(scanner.nextInt());
         } catch (InvalidOxygenLevelException e) {
             log.error(e.getMessage());
         }
-        stringBuilder.append("\nOxygen level: " + patient.getOxygenLevel());
+        stringBuilder.append("\nOxygen level: ").append(patient.getOxygenLevel());
         log.info("Please enter the measured heart rate:");
         patient.setHeartRate(scanner.nextInt());
-        stringBuilder.append("\nHeart rate: " + patient.getHeartRate());
-
+        stringBuilder.append("\nHeart rate: ").append(patient.getHeartRate());
         patient.setVitalSignsHistory(stringBuilder.toString());
-        scanner.close();
-        patient.receivedProcedures.add(Procedures.addDiagnosticProcedure(patient.ID, this.ID, now));
-        doneProcedures.add(Procedures.addDiagnosticProcedure(patient.ID, this.ID, now));
+        patient.addProcedure("diagnostic", this.ID, now);
+        addProcedure("diagnostic", patient.ID, now);
     }
 
     @Override
     public void callPerson(HospitalRoom hospitalRoom) {
         if (!this.vacationDays.contains(LocalDate.now())) {
-            log.info("Please Dr.:" + this.toString() + " report to " + hospitalRoom.toString());
+            log.info("Please Dr.:" + this + " report to " + hospitalRoom.toString());
         }
-        log.info("Sorry, Dr:" + this.toString() + " is on vacation");
+        log.info("Sorry, Dr:" + this + " is on vacation");
     }
 
     @Override
@@ -125,10 +123,9 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
             for (long i = 0; i < 365; i++) {
                 LocalDate nextScheduledDate = currentLocalDateTime.plusDays(i).toLocalDate();
                 if (workingDays.contains(currentLocalDateTime.getDayOfWeek().getValue())) {
-                    for (LocalTime currentTime = entryTime; currentTime.
-                            isAfter(leavingTime.minusMinutes(appointmentDuration));
-                         currentTime.plusMinutes(appointmentDuration)) {
-                        LocalDateTime fullScheduleDateTime = LocalDateTime.of(nextScheduledDate, currentTime);
+                    for (LocalTime time = entryTime; time.isAfter(leavingTime.minusMinutes(appointmentDuration));
+                         time = time.plusMinutes(appointmentDuration)) {
+                        LocalDateTime fullScheduleDateTime = LocalDateTime.of(nextScheduledDate, time);
                         scheduledAppointments.put(fullScheduleDateTime, null);
                     }
                 }
@@ -138,10 +135,9 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
             for (long i = 1; i < 365; i++) {
                 LocalDate nextScheduledDate = lastScheduledRegister.plusDays(i).toLocalDate();
                 if (workingDays.contains(lastScheduledRegister.getDayOfWeek().getValue())) {
-                    for (LocalTime currentTime = entryTime; currentTime.
-                            isAfter(leavingTime.minusMinutes(appointmentDuration));
-                         currentTime.plusMinutes(appointmentDuration)) {
-                        LocalDateTime fullScheduleDateTime = LocalDateTime.of(nextScheduledDate, currentTime);
+                    for (LocalTime time = entryTime; time.isAfter(leavingTime.minusMinutes(appointmentDuration));
+                         time = time.plusMinutes(appointmentDuration)) {
+                        LocalDateTime fullScheduleDateTime = LocalDateTime.of(nextScheduledDate, time);
                         scheduledAppointments.put(fullScheduleDateTime, null);
                     }
                 }
@@ -150,11 +146,8 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
     }
 
     public boolean isScheduleFree(LocalDateTime askedDateTime) {
-        if (scheduledAppointments.containsKey(askedDateTime) &&
-                scheduledAppointments.get(askedDateTime) == null) {
-            return true;
-        }
-        return false;
+        return scheduledAppointments.containsKey(askedDateTime) &&
+                scheduledAppointments.get(askedDateTime) == null;
     }
 
     @Override
@@ -171,12 +164,12 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
     //Set vacation, remove date keys, if it has an appointment prints a warning to re-schedule.
     @Override
     public void setVacationDays(LocalDate firstVacationDay, LocalDate lastVacationDay) {
-        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date.plusDays(1)) {
+        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date = date.plusDays(1)) {
             vacationDays.add(date);
         }
-        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date.plusDays(1)) {
+        for (LocalDate date = firstVacationDay; date.isBefore(lastVacationDay); date = date.plusDays(1)) {
             for (LocalTime time = entryTime; time.isAfter(leavingTime.minusMinutes(appointmentDuration));
-                 time.plusMinutes(appointmentDuration)) {
+                 time = time.plusMinutes(appointmentDuration)) {
                 LocalDateTime currentLocalDateTime = date.atTime(time);
                 if (scheduledAppointments.containsKey(currentLocalDateTime)) {
                     if (scheduledAppointments.get(currentLocalDateTime) != null) {
@@ -198,5 +191,26 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
 
     public void setMedicalSpeciality(String medicalSpeciality) {
         this.medicalSpeciality = medicalSpeciality;
+    }
+
+    public void addProcedure(String type, String patientID, LocalDateTime dateTime) {
+        switch (type) {
+            case "diagnostic":
+                doneProcedures.add(Procedures.addDiagnosticProcedure(patientID, this.ID, dateTime));
+                break;
+
+            case "birth":
+                doneProcedures.add(Procedures.addBirthProcedure(patientID, this.ID, dateTime));
+                break;
+
+            case "anesthesia":
+                doneProcedures.add(Procedures.addAnesthesiaProcedure(patientID, this.ID, dateTime));
+                break;
+
+            case "surgery":
+                doneProcedures.add(Procedures.addSurgeryProcedure(patientID, this.ID, dateTime));
+                break;
+        }
+
     }
 }
