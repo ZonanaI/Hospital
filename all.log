@@ -1271,3 +1271,627 @@ Press 1 to pay it know, any other to pay later
 "w" to set employee worked hours,
 "rp" to request employee paycheck,
 "exit" to close de application:
+2022-08-28 16:14:27.690 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-28 16:14:27.706 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-28 16:14:27.706 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-28 16:14:27.706 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-28 16:14:27.706 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-28 16:14:27.706 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-28 16:14:27.706 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-28 16:14:30.380 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Physician: John Smith in Consulting room 1-a
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Physician: Mary Jo Robbins in Consulting room 1-a
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Physician: Malcom Lyon in Recovery room 2-b
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Physician: Andie Blanchard in Surgery room 2-a
+2022-08-28 16:14:34.270 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 16:16:09.530 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to set worked hours:
+2022-08-28 16:16:19.484 [main] INFO  com.solvd.hospital.Main - Enter the amount of worked hours:
+2022-08-28 16:16:22.828 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 16:16:32.578 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to request pay check:
+2022-08-28 16:16:38.875 [main] INFO  com.solvd.hospital.Main - Physician: Malcom Lyonhas a: $1060.0to be paid
+2022-08-28 16:16:38.875 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:23:53.067 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-28 20:23:53.073 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-28 20:23:53.076 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-28 20:23:53.077 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-28 20:23:53.077 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-28 20:23:53.078 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-28 20:23:53.078 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-28 20:23:55.891 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:24:01.480 [main] INFO  com.solvd.hospital.Main - Physician: John Smith in Consulting room 1-a
+2022-08-28 20:24:01.481 [main] INFO  com.solvd.hospital.Main - Physician: Mary Jo Robbins in Consulting room 1-a
+2022-08-28 20:24:01.481 [main] INFO  com.solvd.hospital.Main - Physician: Malcom Lyon in Recovery room 2-b
+2022-08-28 20:24:01.482 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 20:24:01.482 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 20:24:01.483 [main] INFO  com.solvd.hospital.Main - Physician: Andie Blanchard in Surgery room 2-a
+2022-08-28 20:24:01.483 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:24:16.591 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to request pay check:
+2022-08-28 20:24:30.429 [main] ERROR com.solvd.hospital.Main - Employee not found
+2022-08-28 20:24:30.429 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:25:44.997 [main] INFO  com.solvd.hospital.Main - Physician: John Smith in Consulting room 1-a
+2022-08-28 20:25:44.998 [main] INFO  com.solvd.hospital.Main - Physician: Mary Jo Robbins in Consulting room 1-a
+2022-08-28 20:25:44.998 [main] INFO  com.solvd.hospital.Main - Physician: Malcom Lyon in Recovery room 2-b
+2022-08-28 20:25:44.998 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 20:25:44.998 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 20:25:44.999 [main] INFO  com.solvd.hospital.Main - Physician: Andie Blanchard in Surgery room 2-a
+2022-08-28 20:25:44.999 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:25:51.359 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to request pay check:
+2022-08-28 20:25:53.745 [main] INFO  com.solvd.hospital.Main - Physician: John Smith has a: $30.0to be paid
+2022-08-28 20:25:53.745 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:27:14.443 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to request pay check:
+2022-08-28 20:27:26.964 [main] INFO  com.solvd.hospital.Main - Physician: Mary Jo Robbins has a: $800.0to be paid
+2022-08-28 20:27:26.964 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:43:17.931 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-28 20:43:17.939 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-28 20:43:17.941 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-28 20:43:17.941 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-28 20:43:17.943 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-28 20:43:17.943 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-28 20:43:17.944 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-28 20:43:21.782 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:43:31.365 [main] INFO  com.solvd.hospital.Main - Enter 
+"c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-28 20:43:32.086 [main] INFO  com.solvd.hospital.Main - There are 6 patients in the hospital
+2022-08-28 20:43:32.102 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Mike Abraham, ID: 09184353 in Recovery room 2-b
+2022-08-28 20:43:32.103 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Phil Trengove, ID: 14981432 in Recovery room 2-b
+2022-08-28 20:43:32.103 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Leonard Chapman, ID: 33581170 in Consulting room 1-a
+2022-08-28 20:43:32.104 [main] INFO  com.solvd.hospital.Main - Patient:  Female patient: Briana Garcia, ID: 39341594 in Consulting room 1-a
+2022-08-28 20:43:32.105 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Joe Rogers, ID: 10181213 in Surgery room 2-a
+2022-08-28 20:43:32.105 [main] INFO  com.solvd.hospital.Main - Patient:  Female patient: Dafne Goddard, ID: 12312654 in Surgery room 2-a
+2022-08-28 20:43:32.106 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:43:48.080 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:44:02.107 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:46:04.098 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:46:16.298 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:50:48.138 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-28 20:50:48.146 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-28 20:50:48.148 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-28 20:50:48.148 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-28 20:50:48.149 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-28 20:50:48.149 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-28 20:50:48.149 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-28 20:50:51.308 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:51:41.973 [main] INFO  com.solvd.hospital.Main - Physician: Malcom Lyon in Recovery room 2-b
+2022-08-28 20:51:41.974 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 20:51:41.974 [main] INFO  com.solvd.hospital.Main - Nurse: Aston Jervis in Recovery room 2-b
+2022-08-28 20:51:41.975 [main] INFO  com.solvd.hospital.Main - Physician: John Smith in Consulting room 1-a
+2022-08-28 20:51:41.975 [main] INFO  com.solvd.hospital.Main - Physician: Mary Jo Robbins in Consulting room 1-a
+2022-08-28 20:51:41.975 [main] INFO  com.solvd.hospital.Main - Physician: Andie Blanchard in Surgery room 2-a
+2022-08-28 20:51:41.976 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:51:56.997 [main] INFO  com.solvd.hospital.Main - Enter the desired employee name to request pay check:
+2022-08-28 20:52:00.375 [main] INFO  com.solvd.hospital.Main - Physician: Malcom Lyon has a: $120.0 to be paid
+2022-08-28 20:52:00.376 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:52:45.360 [main] INFO  com.solvd.hospital.Main - Enter 
+"c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-28 20:52:46.223 [main] INFO  com.solvd.hospital.Main - There are 6 patients in the hospital
+2022-08-28 20:52:46.230 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Mike Abraham, ID: 09184353 in Recovery room 2-b
+2022-08-28 20:52:46.230 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Phil Trengove, ID: 14981432 in Recovery room 2-b
+2022-08-28 20:52:46.231 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Leonard Chapman, ID: 33581170 in Consulting room 1-a
+2022-08-28 20:52:46.232 [main] INFO  com.solvd.hospital.Main - Patient:  Female patient: Briana Garcia, ID: 39341594 in Consulting room 1-a
+2022-08-28 20:52:46.232 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Joe Rogers, ID: 10181213 in Surgery room 2-a
+2022-08-28 20:52:46.232 [main] INFO  com.solvd.hospital.Main - Patient:  Female patient: Dafne Goddard, ID: 12312654 in Surgery room 2-a
+2022-08-28 20:52:46.233 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:53:01.309 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:53:15.549 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:54:50.651 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:55:01.832 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:56:55.311 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-28 20:56:55.316 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-28 20:56:55.318 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-28 20:56:55.318 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-28 20:56:55.319 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-28 20:56:55.319 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-28 20:56:55.319 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-28 20:57:01.329 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:57:08.442 [main] INFO  com.solvd.hospital.Main - Enter 
+"c" to get list filter by complexity,
+"r" for room filtered,
+"a" to get all patients,
+"b" to go back:
+2022-08-28 20:57:09.601 [main] INFO  com.solvd.hospital.Main - There are 6 patients in the hospital
+2022-08-28 20:57:09.613 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Joe Rogers, ID: 10181213 in Surgery room 2-a
+2022-08-28 20:57:09.614 [main] INFO  com.solvd.hospital.Main - Patient:  Female patient: Dafne Goddard, ID: 12312654 in Surgery room 2-a
+2022-08-28 20:57:09.614 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Mike Abraham, ID: 09184353 in Recovery room 2-b
+2022-08-28 20:57:09.615 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Phil Trengove, ID: 14981432 in Recovery room 2-b
+2022-08-28 20:57:09.616 [main] INFO  com.solvd.hospital.Main - Patient: Male patient: Leonard Chapman, ID: 33581170 in Consulting room 1-a
+2022-08-28 20:57:09.616 [main] INFO  com.solvd.hospital.Main - Patient:  Female patient: Briana Garcia, ID: 39341594 in Consulting room 1-a
+2022-08-28 20:57:09.617 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:57:20.768 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:57:23.715 [main] INFO  com.solvd.hospital.people.Patient - You have a: surgery procedure to pay which costs: 1500.0.
+Press 1 to pay it know, any other to pay later
+2022-08-28 20:57:28.493 [main] INFO  com.solvd.hospital.people.Patient - You have a: anesthesia procedure to pay which costs: 1000.0.
+Press 1 to pay it know, any other to pay later
+2022-08-28 20:57:32.624 [main] INFO  com.solvd.hospital.people.Patient - You have a: $1000.0 remaining to pay
+2022-08-28 20:57:32.625 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:57:40.981 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:57:43.772 [main] INFO  com.solvd.hospital.people.Patient - You have a: anesthesia procedure to pay which costs: 1000.0.
+Press 1 to pay it know, any other to pay later
+2022-08-28 20:57:46.831 [main] INFO  com.solvd.hospital.people.Patient - You have a: $0.0 remaining to pay
+2022-08-28 20:57:46.831 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:57:53.132 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:57:58.356 [main] INFO  com.solvd.hospital.people.Patient - You have a: $0.0 remaining to pay
+2022-08-28 20:57:58.357 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:58:37.835 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-08-28 20:58:37.845 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-08-28 20:58:37.846 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-08-28 20:58:37.847 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-08-28 20:58:37.847 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-08-28 20:58:37.847 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-08-28 20:58:37.848 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-08-28 20:58:40.358 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:58:44.635 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:58:46.640 [main] INFO  com.solvd.hospital.people.Patient - You have a: surgery procedure to pay which costs: 1500.0.
+Press 1 to pay it know, any other to pay later
+2022-08-28 20:58:48.783 [main] INFO  com.solvd.hospital.people.Patient - You have a: anesthesia procedure to pay which costs: 1000.0.
+Press 1 to pay it know, any other to pay later
+2022-08-28 20:58:50.125 [main] INFO  com.solvd.hospital.people.Patient - You have a: $0.0 remaining to pay
+2022-08-28 20:58:50.126 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:
+2022-08-28 20:58:55.554 [main] INFO  com.solvd.hospital.Main - Enter the desired patient ID to request charges:
+2022-08-28 20:58:57.421 [main] INFO  com.solvd.hospital.people.Patient - You have a: $0.0 remaining to pay
+2022-08-28 20:58:57.422 [main] INFO  com.solvd.hospital.Main - Enter:
+"a" to add new patient/employee,
+"gp" to get patients list,
+"ge" for employees list,
+"c" to call patient/employee 
+"e" to evacuate the room,
+"m" to set patient vital signs,
+"rv" to request patient vital signs history,
+"rc" to request patient charges,
+"cd" to check if patient can receive blood from other,
+"s" to schedule an appointment,
+"v" to set employee vacation days,
+"w" to set employee worked hours,
+"rp" to request employee paycheck,
+"exit" to close de application:

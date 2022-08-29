@@ -10,7 +10,7 @@ public enum BloodType {
     AB_NEGATIVE("O_NEGATIVE, A_NEGATIVE, B_NEGATIVE, AB_NEGATIVE"),
     AB_POSITIVE("O_NEGATIVE, O_POSITIVE, A_NEGATIVE, A_POSITIVE, B_NEGATIVE, B_POSITIVE, AB_NEGATIVE," +
             "AB_POSITIVE");
-    private String canReceiveFrom;
+    private final String canReceiveFrom;
 
     BloodType(String canReceiveFrom) {
         this.canReceiveFrom = canReceiveFrom;

@@ -61,8 +61,11 @@ public class Main {
                         DefaultRooms.values()) {
                     String roomInitial = dR.getType();
                     String location = dR.getLocation();
-                    if (roomDoesNotExists(roomSet, roomInitial, location)) {
+                    if (roomSet.stream()
+                            .noneMatch(p -> p.toString().startsWith(roomInitial.toUpperCase()))) {
                         roomSet.add(addHospitalRoom(roomInitial, location));
+                    } else {
+                        log.error("Room already exists");
                     }
                 }
 
@@ -97,41 +100,49 @@ public class Main {
 
                 for (DefaultProcedures dP :
                         DefaultProcedures.values()) {
-                    Physician physician = searchPhysicianByID(roomSet, dP.getPhysicianID());
-                    if (physician != null) {
-                        physician.addProcedure(dP.getType(), dP.getPatientID(), dP.getLocalDateTime());
-                    }
-                    Patient patient = searchPatientByID(roomSet, dP.getPatientID());
-                    if (patient != null) {
-                        patient.addProcedure(dP.getType(), dP.getPhysicianID(), dP.getLocalDateTime());
-                    }
+                    roomSet.forEach(j -> j.getEmployeeSet()
+                            .stream()
+                            .filter(k -> k.getID().equals(dP.getPhysicianID()) && k instanceof Physician)
+                            .map(Physician.class::cast)
+                            .forEach((l -> l
+                                    .addProcedure(dP.getType(), dP.getPatientID(), dP.getLocalDateTime()))));
+
+                    roomSet.forEach(j -> j.getPatientsSet()
+                            .stream()
+                            .filter(k -> k.getID().equals(dP.getPatientID()))
+                            .forEach(l -> l
+                                    .addProcedure(dP.getType(), dP.getPhysicianID(), dP.getLocalDateTime())));
                 }
                 break;
             }
             log.info("Please specify the location of the room (Floor-sector e.g., " +
                     "first floor sector A: 1-a)");
             String location = scanner.nextLine().toLowerCase();
-            if (roomDoesNotExists(roomSet, command, location)) {
+            String finalCommand = command;
+            if (roomSet.stream()
+                    .noneMatch(p -> p.toString().startsWith(finalCommand.toUpperCase()))) {
                 roomSet.add(addHospitalRoom(command, location));
+            } else {
+                log.error("Room already exists");
             }
         }
 
         while (!command.toLowerCase(Locale.ROOT).equals("exit")) {
             log.info("Enter:" +
-                    "\n\"a\" to add new patient/employee," +                        //Done
-                    "\n\"gp\" to get patients list," +                              //Done
+                    "\n\"a\" to add new patient/employee," +
+                    "\n\"gp\" to get patients list," +
                     "\n\"ge\" for employees list," +
-                    "\n\"c\" to call patient/employee " +                           //Done
-                    "\n\"e\" to evacuate the room," +                               //Done
-                    "\n\"m\" to set patient vital signs," +                         //Done
-                    "\n\"rv\" to request patient vital signs history," +            //Done
-                    "\n\"rc\" to request patient charges," +                        //Done
-                    "\n\"cd\" to check if patient can receive blood from other," +  //Done
-                    "\n\"s\" to schedule an appointment," +                         //Done
-                    "\n\"v\" to set employee vacation days," +                      //Done
-                    "\n\"w\" to set employee worked hours," +                       //Done
-                    "\n\"rp\" to request employee paycheck," +                      //Done
-                    "\n\"exit\" to close de application:");                         //Done
+                    "\n\"c\" to call patient/employee " +
+                    "\n\"e\" to evacuate the room," +
+                    "\n\"m\" to set patient vital signs," +
+                    "\n\"rv\" to request patient vital signs history," +
+                    "\n\"rc\" to request patient charges," +
+                    "\n\"cd\" to check if patient can receive blood from other," +
+                    "\n\"s\" to schedule an appointment," +
+                    "\n\"v\" to set employee vacation days," +
+                    "\n\"w\" to set employee worked hours," +
+                    "\n\"rp\" to request employee paycheck," +
+                    "\n\"exit\" to close de application:");
             command = scanner.nextLine().toLowerCase();
             switch (command) {
                 case "exit":
@@ -230,7 +241,7 @@ public class Main {
                         case "c":
                             log.info("Enter the desired complexity filter:");
                             String complexity = scanner.nextLine();
-                            int totalPatientCount = 0;
+                            long totalPatientCount = 0;
                             while (roomIterator.hasNext()) {
                                 int partialPatientCount = 0;
                                 HospitalRoom currentRoom = roomIterator.next();
@@ -285,7 +296,8 @@ public class Main {
                     break;
 
                 case "ge":
-                    roomSet.forEach(j -> j.getEmployeeSet().forEach(i -> log.info(i + " in " + j)));
+                    roomSet.forEach(j -> j.getEmployeeSet().forEach(i ->
+                            log.info(i + " ID: " + i.getID() + " in " + j)));
                     break;
 
                 case "c":
@@ -295,19 +307,19 @@ public class Main {
                     String location = scanner.nextLine().toLowerCase();
                     log.info("Enter \"p\" to call patient or \"e\" for employee:");
                     String personType = scanner.nextLine().toLowerCase();
-                    log.info("Enter the desired patient/employee name to call:");
-                    String personName = scanner.nextLine().toLowerCase();
+                    log.info("Enter the desired patient/employee ID to call:");
+                    String personID = scanner.nextLine().toLowerCase();
                     HospitalRoom currentRoom = searchHospitalRoom(roomSet, room, location);
                     if (currentRoom != null) {
                         if (personType.equals("p")) {
-                            Patient calledPatient = searchPatientByName(roomSet, personName);
+                            Patient calledPatient = searchPatientByID(roomSet, personID);
                             if (calledPatient != null) {
                                 calledPatient.callPerson(currentRoom);
                             } else {
                                 log.error("Patient not found");
                             }
                         } else if (personType.equals("e")) {
-                            Employee calledEmployee = searchEmployeeByName(roomSet, personName);
+                            Employee calledEmployee = searchEmployeeByID(roomSet, personID);
                             if (calledEmployee != null) {
                                 calledEmployee.callPerson(currentRoom);
                             } else {
@@ -344,12 +356,12 @@ public class Main {
                     }
                     break;
                 case "m":
-                    log.info("Enter the desired employee name to perform the measurements:");
-                    String employeeName = scanner.nextLine().toLowerCase();
-                    log.info("Enter the desired patient name to receive the measurements:");
-                    String patientName = scanner.nextLine().toLowerCase();
-                    Employee employee = searchEmployeeByName(roomSet, employeeName);
-                    Patient patient = searchPatientByName(roomSet, patientName);
+                    log.info("Enter the desired employee ID to perform the measurements:");
+                    String employeeID = scanner.nextLine().toLowerCase();
+                    log.info("Enter the desired patient ID to receive the measurements:");
+                    String patientID = scanner.nextLine().toLowerCase();
+                    Employee employee = searchEmployeeByID(roomSet, employeeID);
+                    Patient patient = searchPatientByID(roomSet, patientID);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -361,9 +373,9 @@ public class Main {
                     }
                     break;
                 case "rv":
-                    log.info("Enter the desired patient name to request vital signs:");
-                    patientName = scanner.nextLine().toLowerCase();
-                    patient = searchPatientByName(roomSet, patientName);
+                    log.info("Enter the desired patient ID to request vital signs:");
+                    patientID = scanner.nextLine().toLowerCase();
+                    patient = searchPatientByID(roomSet, patientID);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -372,21 +384,22 @@ public class Main {
                     break;
                 case "rc":
                     log.info("Enter the desired patient ID to request charges:");
-                    patientName = scanner.nextLine().toLowerCase();
-                    patient = searchPatientByID(roomSet, patientName);
-                    if (patient == null) {
-                        log.error("Patient not found");
-                    } else {
-                        patient.requestCharges();
-                    }
+                    patientID = scanner.nextLine().toLowerCase();
+                    //patient = searchPatientByID(roomSet, patientID);
+
+                    roomSet.forEach(j -> j.getPatientsSet()
+                            .stream()
+                            .filter(k -> k.getID().equals(patientID))
+                            .forEach(Patient::requestCharges));
+
                     break;
                 case "s":
-                    log.info("Enter the desired physician name to schedule the appointment:");
-                    employeeName = scanner.nextLine().toLowerCase();
-                    log.info("Enter the desired patient name to schedule the appointment:");
-                    patientName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployeeByName(roomSet, employeeName);
-                    patient = searchPatientByName(roomSet, patientName);
+                    log.info("Enter the desired physician ID to schedule the appointment:");
+                    employeeID = scanner.nextLine().toLowerCase();
+                    log.info("Enter the desired patient ID to schedule the appointment:");
+                    patientID = scanner.nextLine().toLowerCase();
+                    employee = searchEmployeeByID(roomSet, employeeID);
+                    patient = searchPatientByID(roomSet, patientID);
                     if (patient == null) {
                         log.error("Patient not found");
                     } else {
@@ -406,9 +419,9 @@ public class Main {
                     break;
 
                 case "v":
-                    log.info("Enter the desired employee name to request vacations:");
-                    employeeName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployeeByName(roomSet, employeeName);
+                    log.info("Enter the desired employee ID to request vacations:");
+                    employeeID = scanner.nextLine().toLowerCase();
+                    employee = searchEmployeeByID(roomSet, employeeID);
                     if (employee == null) {
                         log.error("Employee not found");
                     } else {
@@ -423,9 +436,9 @@ public class Main {
                     break;
 
                 case "w":
-                    log.info("Enter the desired employee name to set worked hours:");
-                    employeeName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployeeByName(roomSet, employeeName);
+                    log.info("Enter the desired employee ID to set worked hours:");
+                    employeeID = scanner.nextLine().toLowerCase();
+                    employee = searchEmployeeByID(roomSet, employeeID);
                     if (employee == null) {
                         log.error("Employee not found");
                     } else {
@@ -436,23 +449,23 @@ public class Main {
                     break;
 
                 case "rp":
-                    log.info("Enter the desired employee name to request pay check:");
-                    employeeName = scanner.nextLine().toLowerCase();
-                    employee = searchEmployeeByName(roomSet, employeeName);
+                    log.info("Enter the desired employee ID to request pay check:");
+                    employeeID = scanner.nextLine().toLowerCase();
+                    employee = searchEmployeeByID(roomSet, employeeID);
                     if (employee == null) {
                         log.error("Employee not found");
                     } else {
-                        log.info(employee + " has a: $" + employee.getPayCheck() + "to be paid");
+                        log.info(employee + " has a: $" + employee.getPayCheck() + " to be paid");
                     }
                     break;
 
                 case "cd":
-                    log.info("Enter the receiving blood patient name to check compatibility:");
-                    String receivingPatientName = scanner.nextLine().toLowerCase();
-                    log.info("Enter the giving blood patient name to check compatibility:");
-                    String givingPatientName = scanner.nextLine().toLowerCase();
-                    Patient receivingPatient = searchPatientByName(roomSet, receivingPatientName);
-                    Patient givingPatient = searchPatientByName(roomSet, givingPatientName);
+                    log.info("Enter the receiving blood patient ID to check compatibility:");
+                    String receivingPatientID = scanner.nextLine().toLowerCase();
+                    log.info("Enter the giving blood patient ID to check compatibility:");
+                    String givingPatientID = scanner.nextLine().toLowerCase();
+                    Patient receivingPatient = searchPatientByID(roomSet, receivingPatientID);
+                    Patient givingPatient = searchPatientByID(roomSet, givingPatientID);
                     if (receivingPatient == null) {
                         log.error("Receiving patient not found");
                     } else {
@@ -466,18 +479,6 @@ public class Main {
             }
         }
         scanner.close();
-    }
-
-    static boolean roomDoesNotExists(Set<HospitalRoom> rooms, String roomInitial, String roomSector) {
-        for (HospitalRoom currentRoom : rooms) {
-            if (currentRoom.getClass().getSimpleName().toLowerCase(Locale.ROOT).startsWith(roomInitial)) {
-                if (currentRoom.getLocation().equals(roomSector)) {
-                    log.error("Room already exists");
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     static HospitalRoom addHospitalRoom(String roomInitial, String location) {
@@ -541,19 +542,6 @@ public class Main {
         return LocalDate.parse(strDate, formatter);
     }
 
-    static Patient searchPatientByName(Set<HospitalRoom> roomSet, String fullName) {
-        for (HospitalRoom room :
-                roomSet) {
-            for (Patient patient :
-                    room.getPatientsSet()) {
-                if (patient.getFullName().toLowerCase().equals(fullName)) {
-                    return patient;
-                }
-            }
-        }
-        return null;
-    }
-
     static Patient searchPatientByID(Set<HospitalRoom> roomSet, String ID) {
         for (HospitalRoom room :
                 roomSet) {
@@ -567,28 +555,13 @@ public class Main {
         return null;
     }
 
-    static Employee searchEmployeeByName(Set<HospitalRoom> roomSet, String fullName) {
-        for (HospitalRoom room :
-                roomSet) {
-            for (Employee employee :
-                    room.getEmployeeSet()) {
-                if (employee.getFullName().toLowerCase().equals(fullName)) {
-                    return employee;
-                }
-            }
-        }
-        return null;
-    }
-
-    static Physician searchPhysicianByID(Set<HospitalRoom> roomSet, String ID) {
+    static Employee searchEmployeeByID(Set<HospitalRoom> roomSet, String ID) {
         for (HospitalRoom room :
                 roomSet) {
             for (Employee employee :
                     room.getEmployeeSet()) {
                 if (employee.getID().toLowerCase().equals(ID)) {
-                    if (employee instanceof Physician) {
-                        return ((Physician) employee);
-                    }
+                    return employee;
                 }
             }
         }

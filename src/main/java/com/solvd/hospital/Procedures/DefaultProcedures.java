@@ -16,10 +16,14 @@ public enum DefaultProcedures {
             LocalDateTime.parse("2022-08-25T10:11:00")),
     DIAGNOSTIC_09184353("diagnostic", "09184353", "24647160",
             LocalDateTime.parse("2022-08-25T10:11:00")),
-    DIAGNOSTIC_39341594("diagnostic", "39341594", "24647160",
+    DIAGNOSTIC_14981432("diagnostic", "14981432", "24647160",
+            LocalDateTime.parse("2022-08-19T10:11:00")),
+    DIAGNOSTIC_12312654("diagnostic", "12312654", "24647160",
             LocalDateTime.parse("2022-08-19T10:11:00")),
     BIRTH_39341594("birth", "39341594", "10225739",
             LocalDateTime.parse("2022-08-22T13:15:00")),
+    DIAGNOSTIC_39341594("diagnostic", "39341594", "24647160",
+            LocalDateTime.parse("2022-08-19T10:11:00")),
 
     ;
     private final String type;
