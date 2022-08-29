@@ -69,11 +69,15 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
         while (proceduresIterator.hasNext()) {
             Procedures currentProcedure = proceduresIterator.next();
             if (!currentProcedure.isPaidByPatient()) {
-                log.info("You have a: " + currentProcedure.getType() + " procedure to pay which costs: " +
-                        currentProcedure.getCost() + ".\nPress 1 to pay it know, any other to pay later");
+                log.info("You have a: " + currentProcedure.getType() + " procedure to pay " + " made by " +
+                        currentProcedure.getPhysicianName() + " on " + currentProcedure.getLocalDateTime() +
+                        ",\n which costs: " + currentProcedure.getCost() +
+                        ".\nPress 1 to pay it know, any other to pay later");
                 String command = scanner.nextLine();
                 if (command.equals("1")) {
                     currentProcedure.setPaidByPatient(true);
+                    double totalOwedByPatients = Procedures.getTotalOwedByPatients() - currentProcedure.getCost();
+                    Procedures.setTotalOwedByPatients(totalOwedByPatients);
                     continue;
                 }
                 totalRemaining += currentProcedure.getCost();
@@ -163,22 +167,22 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
         this.vitalSignsHistory = vitalSignsHistory;
     }
 
-    public void addProcedure(String type, String physicianID, LocalDateTime dateTime) {
+    public void addProcedure(String type, Physician physician, LocalDateTime dateTime) {
         switch (type) {
             case "diagnostic":
-                receivedProcedures.add(Procedures.addDiagnosticProcedure(this.ID, physicianID, dateTime));
+                receivedProcedures.add(Procedures.addDiagnosticProcedure(this, physician, dateTime));
                 break;
 
             case "birth":
-                receivedProcedures.add(Procedures.addBirthProcedure(this.ID, physicianID, dateTime));
+                receivedProcedures.add(Procedures.addBirthProcedure(this, physician, dateTime));
                 break;
 
             case "anesthesia":
-                receivedProcedures.add(Procedures.addAnesthesiaProcedure(this.ID, physicianID, dateTime));
+                receivedProcedures.add(Procedures.addAnesthesiaProcedure(this, physician, dateTime));
                 break;
 
             case "surgery":
-                receivedProcedures.add(Procedures.addSurgeryProcedure(this.ID, physicianID, dateTime));
+                receivedProcedures.add(Procedures.addSurgeryProcedure(this, physician, dateTime));
                 break;
         }
 

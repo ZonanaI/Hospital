@@ -1,5 +1,8 @@
 package com.solvd.hospital.Procedures;
 
+import com.solvd.hospital.people.Patient;
+import com.solvd.hospital.people.Physician;
+
 import java.time.LocalDateTime;
 
 public class Procedures {
@@ -8,8 +11,8 @@ public class Procedures {
     private String ID;
     private double cost;
     private double physicianPayRate;
-    private String patientID;
-    private String physicianID;
+    private Patient patient;
+    private Physician physician;
     private LocalDateTime localDateTime;
     private boolean paidToPhysician;
     private boolean paidByPatient;
@@ -21,67 +24,63 @@ public class Procedures {
         totalOwedToPhysician = 0;
     }
 
-    public Procedures(String type, String ID, double cost, double physicianPayRate, String patientID,
-                      String physicianID, LocalDateTime localDateTime) {
+    public Procedures(String type, String ID, double cost, double physicianPayRate, Patient patient,
+                      Physician physician, LocalDateTime localDateTime) {
         this.type = type;
         this.ID = ID;
         this.cost = cost;
         this.physicianPayRate = physicianPayRate;
-        this.patientID = patientID;
-        this.physicianID = physicianID;
+        this.patient = patient;
+        this.physician = physician;
         this.localDateTime = localDateTime;
         this.paidToPhysician = false;
         this.paidByPatient = false;
     }
 
-    public static Procedures addDiagnosticProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+    public static Procedures addDiagnosticProcedure(Patient patient, Physician physician, LocalDateTime localDateTime) {
         String type = "diagnostic";
         String ID = "001";
         double cost = 120;
         double physicianPayRate = 30;
         totalOwedByPatients += cost;
         totalOwedToPhysician += physicianPayRate;
-        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+        return new Procedures(type, ID, cost, physicianPayRate, patient, physician, localDateTime);
     }
 
-    public static Procedures addBirthProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+    public static Procedures addBirthProcedure(Patient patient, Physician physician, LocalDateTime localDateTime) {
         String type = "birth";
         String ID = "014";
         double cost = 2000;
         double physicianPayRate = 500;
         totalOwedByPatients += cost;
         totalOwedToPhysician += physicianPayRate;
-        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+        return new Procedures(type, ID, cost, physicianPayRate, patient, physician, localDateTime);
     }
 
-    public static Procedures addAnesthesiaProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+    public static Procedures addAnesthesiaProcedure(Patient patient, Physician physician, LocalDateTime localDateTime) {
         String type = "anesthesia";
         String ID = "017";
         double cost = 1000;
         double physicianPayRate = 400;
         totalOwedByPatients += cost;
         totalOwedToPhysician += physicianPayRate;
-        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+        return new Procedures(type, ID, cost, physicianPayRate, patient, physician, localDateTime);
     }
 
-    public static Procedures addSurgeryProcedure(String patientID, String physicianID, LocalDateTime localDateTime) {
+    public static Procedures addSurgeryProcedure(Patient patient, Physician physician, LocalDateTime localDateTime) {
         String type = "surgery";
         String ID = "022";
         double cost = 1500;
         double physicianPayRate = 375;
         totalOwedByPatients += cost;
         totalOwedToPhysician += physicianPayRate;
-        return new Procedures(type, ID, cost, physicianPayRate, patientID, physicianID, localDateTime);
+        return new Procedures(type, ID, cost, physicianPayRate, patient, physician, localDateTime);
     }
 
 
     //Setters and getters
     public String getType() {
         return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getID() {
@@ -96,32 +95,8 @@ public class Procedures {
         return cost;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
     public double getPhysicianPayRate() {
         return physicianPayRate;
-    }
-
-    public void setPhysicianPayRate(double physicianPayRate) {
-        this.physicianPayRate = physicianPayRate;
-    }
-
-    public String getPatientID() {
-        return patientID;
-    }
-
-    public void setPatientID(String patientID) {
-        this.patientID = patientID;
-    }
-
-    public String getPhysicianID() {
-        return physicianID;
-    }
-
-    public void setPhysicianID(String physicianID) {
-        this.physicianID = physicianID;
     }
 
     public boolean isPaidToPhysician() {
@@ -140,4 +115,31 @@ public class Procedures {
         this.paidByPatient = paidByPatient;
     }
 
+    public String getPhysicianName() {
+        return this.physician.getFullName();
+    }
+
+    public String getPatientName() {
+        return this.patient.getFullName();
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return localDateTime;
+    }
+
+    public static double getTotalOwedByPatients() {
+        return totalOwedByPatients;
+    }
+
+    public static double getTotalOwedToPhysician() {
+        return totalOwedToPhysician;
+    }
+
+    public static void setTotalOwedByPatients(double totalOwedByPatients) {
+        Procedures.totalOwedByPatients = totalOwedByPatients;
+    }
+
+    public static void setTotalOwedToPhysician(double totalOwedToPhysician) {
+        Procedures.totalOwedToPhysician = totalOwedToPhysician;
+    }
 }

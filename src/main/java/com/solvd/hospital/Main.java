@@ -100,18 +100,20 @@ public class Main {
 
                 for (DefaultProcedures dP :
                         DefaultProcedures.values()) {
+                    Patient patient = searchPatientByID(roomSet, dP.getPatientID());
                     roomSet.forEach(j -> j.getEmployeeSet()
                             .stream()
                             .filter(k -> k.getID().equals(dP.getPhysicianID()) && k instanceof Physician)
                             .map(Physician.class::cast)
                             .forEach((l -> l
-                                    .addProcedure(dP.getType(), dP.getPatientID(), dP.getLocalDateTime()))));
+                                    .addProcedure(dP.getType(), patient, dP.getLocalDateTime()))));
 
+                    Physician physician = (Physician) searchEmployeeByID(roomSet, dP.getPhysicianID());
                     roomSet.forEach(j -> j.getPatientsSet()
                             .stream()
                             .filter(k -> k.getID().equals(dP.getPatientID()))
                             .forEach(l -> l
-                                    .addProcedure(dP.getType(), dP.getPhysicianID(), dP.getLocalDateTime())));
+                                    .addProcedure(dP.getType(), physician, dP.getLocalDateTime())));
                 }
                 break;
             }
@@ -385,8 +387,6 @@ public class Main {
                 case "rc":
                     log.info("Enter the desired patient ID to request charges:");
                     patientID = scanner.nextLine().toLowerCase();
-                    //patient = searchPatientByID(roomSet, patientID);
-
                     roomSet.forEach(j -> j.getPatientsSet()
                             .stream()
                             .filter(k -> k.getID().equals(patientID))

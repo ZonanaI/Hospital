@@ -72,6 +72,8 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         }
         int paidHours = workedHours;
         workedHours = 0;
+        double totalOwedToPhysicians = Procedures.getTotalOwedToPhysician() - proceduresPay;
+        Procedures.setTotalOwedToPhysician(totalOwedToPhysicians);
         return paidHours * payRate + proceduresPay;
     }
 
@@ -100,8 +102,8 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         patient.setHeartRate(scanner.nextInt());
         stringBuilder.append("\nHeart rate: ").append(patient.getHeartRate());
         patient.setVitalSignsHistory(stringBuilder.toString());
-        patient.addProcedure("diagnostic", this.ID, now);
-        addProcedure("diagnostic", patient.ID, now);
+        patient.addProcedure("diagnostic", this, now);
+        addProcedure("diagnostic", patient, now);
     }
 
     @Override
@@ -193,22 +195,22 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
         this.medicalSpeciality = medicalSpeciality;
     }
 
-    public void addProcedure(String type, String patientID, LocalDateTime dateTime) {
+    public void addProcedure(String type, Patient patient, LocalDateTime dateTime) {
         switch (type) {
             case "diagnostic":
-                doneProcedures.add(Procedures.addDiagnosticProcedure(patientID, this.ID, dateTime));
+                doneProcedures.add(Procedures.addDiagnosticProcedure(patient, this, dateTime));
                 break;
 
             case "birth":
-                doneProcedures.add(Procedures.addBirthProcedure(patientID, this.ID, dateTime));
+                doneProcedures.add(Procedures.addBirthProcedure(patient, this, dateTime));
                 break;
 
             case "anesthesia":
-                doneProcedures.add(Procedures.addAnesthesiaProcedure(patientID, this.ID, dateTime));
+                doneProcedures.add(Procedures.addAnesthesiaProcedure(patient, this, dateTime));
                 break;
 
             case "surgery":
-                doneProcedures.add(Procedures.addSurgeryProcedure(patientID, this.ID, dateTime));
+                doneProcedures.add(Procedures.addSurgeryProcedure(patient, this, dateTime));
                 break;
         }
 

@@ -74,24 +74,6 @@ public abstract class HospitalRoom implements IEvacuable {
         }
     }
 
-    public Patient searchPatient(String fullName) {
-        for (Patient patient : patientsSet) {
-            if (patient.getFullName().toLowerCase().equals(fullName)) {
-                return patient;
-            }
-        }
-        return null;
-    }
-
-    public Employee searchEmployee(String fullName) {
-        for (Employee employee : employeeSet) {
-            if (employee.getFullName().toLowerCase().equals(fullName)) {
-                return employee;
-            }
-        }
-        return null;
-    }
-
     @Override
     public void evacuateTheRoom(String cause) {
         for (Patient patient : patientsSet) {

@@ -56,7 +56,7 @@ public class CustomLinkedList<T> implements Iterable<T> {
     }
 
     public Iterator<T> iterator() {
-        return new ListIterator<T>(this);
+        return new ListIterator<>(this);
     }
 
     public void remove(T key) {
