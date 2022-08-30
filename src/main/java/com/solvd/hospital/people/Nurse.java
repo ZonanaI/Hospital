@@ -56,6 +56,8 @@ public final class Nurse extends Employee implements IDiagnosable, ICallable, IE
 
     @Override
     public double getPayCheck() {
+        IThankable<Nurse> thanks = t -> log.info("Thanks: " + t.fullName + " for your non stop work!");
+        thanks.thank(this);
         return workedHours * payRate;
     }
 

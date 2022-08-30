@@ -75,6 +75,8 @@ public abstract class Patient extends Person implements ISchedulable<Physician>,
                         ".\nPress 1 to pay it know, any other to pay later");
                 String command = scanner.nextLine();
                 if (command.equals("1")) {
+                    IThankable <Patient> thanks = t -> log.info("Thanks: " + t.fullName + " for paying");
+                    thanks.thank(this);
                     currentProcedure.setPaidByPatient(true);
                     double totalOwedByPatients = Procedures.getTotalOwedByPatients() - currentProcedure.getCost();
                     Procedures.setTotalOwedByPatients(totalOwedByPatients);

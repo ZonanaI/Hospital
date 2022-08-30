@@ -70,6 +70,8 @@ public class Physician extends Employee implements IDiagnosable, ISchedulable<Pa
                 currentProcedure.setPaidToPhysician(true);
             }
         }
+        IThankable <Physician> thanks = t -> log.info("Thanks doctor: " + t.fullName + " for your awesome work!");
+        thanks.thank(this);
         int paidHours = workedHours;
         workedHours = 0;
         double totalOwedToPhysicians = Procedures.getTotalOwedToPhysician() - proceduresPay;
