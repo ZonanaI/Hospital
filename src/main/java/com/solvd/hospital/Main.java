@@ -18,7 +18,8 @@ import com.solvd.hospital.rooms.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Main {
+public class Main extends Thread implements Runnable {
+
 
     private static final Logger log = LogManager.getLogger(Main.class);
 
@@ -37,6 +38,17 @@ public class Main {
         for (String message : welcomeMessages) {
             log.info(message);
         }
+
+
+        //Testing threads
+        TestThread test1 = new TestThread();
+        test1.start();
+        TestRunnable test2 = new TestRunnable();
+        Thread t2 = new Thread(test2,"test2");
+        t2.run();
+        log.info(t2.getName());
+
+
         while (!command.toLowerCase(Locale.ROOT).equals("f")) {
             log.info("Initial configuration of hospital rooms");
             log.info("Enter:" +

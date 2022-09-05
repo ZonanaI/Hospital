@@ -1967,3 +1967,44 @@ Press 1 to pay it know, any other to pay later
 "w" to set employee worked hours,
 "rp" to request employee paycheck,
 "exit" to close de application:
+2022-09-04 17:33:58.916 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-09-04 17:33:58.918 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-09-04 17:33:58.918 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-09-04 17:33:58.919 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-09-04 17:33:58.919 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-09-04 17:33:58.920 [Thread-0] INFO  com.solvd.hospital.TestThread - I´m a thread class thread
+2022-09-04 17:33:58.922 [main] INFO  com.solvd.hospital.Main - test2
+2022-09-04 17:33:58.922 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-09-04 17:33:58.922 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-09-04 17:35:35.406 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-09-04 17:35:35.409 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-09-04 17:35:35.409 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-09-04 17:35:35.409 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-09-04 17:35:35.410 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-09-04 17:35:35.411 [main] INFO  com.solvd.hospital.TestRunnable - I´m a runnable thread
+2022-09-04 17:35:35.410 [Thread-0] INFO  com.solvd.hospital.TestThread - I´m a thread class thread
+2022-09-04 17:35:35.411 [main] INFO  com.solvd.hospital.Main - test2
+2022-09-04 17:35:35.411 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-09-04 17:35:35.412 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
