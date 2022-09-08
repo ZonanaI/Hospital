@@ -18,12 +18,13 @@ import com.solvd.hospital.rooms.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Main extends Thread implements Runnable {
+public class Main extends Thread {
 
 
     private static final Logger log = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+
         String command = "";
 
         Scanner scanner = new Scanner(System.in);
@@ -41,13 +42,46 @@ public class Main extends Thread implements Runnable {
 
 
         //Testing threads
-        TestThread test1 = new TestThread();
-        test1.start();
+        TestThread  t1 = new TestThread();
+        t1.start();
         TestRunnable test2 = new TestRunnable();
         Thread t2 = new Thread(test2,"test2");
-        t2.run();
-        log.info(t2.getName());
+        t2.start();
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException ignored) {}
 
+        //Testing connection pool
+        ConnectionPool pool = ConnectionPool.getInstance();
+
+        ConnectingThread cT1 = new ConnectingThread(5);
+        ConnectingThread cT2 = new ConnectingThread(10);
+        ConnectingThread cT3 = new ConnectingThread(15);
+        ConnectingThread cT4 = new ConnectingThread(20);
+        ConnectingThread cT5 = new ConnectingThread(30);
+        ConnectingThread cT6 = new ConnectingThread(35);
+        ConnectingThread cT7 = new ConnectingThread(40);
+
+        cT1.start();
+        cT2.start();
+        cT3.start();
+        cT4.start();
+        cT5.start();
+        cT6.start();
+        cT7.start();
+
+        try {
+            cT1.join();
+            cT2.join();
+            cT3.join();
+            cT4.join();
+            cT5.join();
+            cT6.join();
+            cT7.join();
+        } catch (InterruptedException ignored) {}
+
+        pool.closeAllIdleConnections();
 
         while (!command.toLowerCase(Locale.ROOT).equals("f")) {
             log.info("Initial configuration of hospital rooms");
