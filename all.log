@@ -3239,3 +3239,154 @@ Press 1 to pay it know, any other to pay later
 "s" Surgery room.
 "f" to end rooms configuration:
 "exit" to close the application,
+2022-09-08 19:42:54.222 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-09-08 19:42:54.224 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-09-08 19:42:54.225 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-09-08 19:42:54.225 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-09-08 19:42:54.225 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-09-08 19:42:54.226 [Thread-0] INFO  com.solvd.hospital.TestThread - I´m a thread class thread
+2022-09-08 19:42:54.226 [test2] INFO  com.solvd.hospital.TestRunnable - I´m a runnable thread
+2022-09-08 19:42:54.227 [test2] INFO  com.solvd.hospital.TestRunnable - I'm taking a 5 seconds nap
+2022-09-08 19:42:54.228 [Thread-0] INFO  com.solvd.hospital.TestThread - I'm taking a 7 seconds nap
+2022-09-08 19:42:59.232 [test2] INFO  com.solvd.hospital.TestRunnable - I'm awake now!
+2022-09-08 19:43:01.234 [Thread-0] INFO  com.solvd.hospital.TestThread - I'm awake now!
+2022-09-08 19:43:01.235 [main] ERROR com.solvd.hospital.ConnectionPool - java.io.FileNotFoundException: configuration.properties (El sistema no puede encontrar el archivo especificado)
+2022-09-08 19:43:01.288 [Thread-1] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.289 [Thread-5] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.289 [Thread-7] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.290 [Thread-4] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.290 [Thread-3] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.290 [Thread-6] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.291 [Thread-2] ERROR com.solvd.hospital.ConnectingThread - java.sql.SQLException: Cannot create JDBC driver of class '' for connect URL 'null'
+2022-09-08 19:43:01.291 [main] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:43:01.291 [main] INFO  com.solvd.hospital.ConnectionPool - There are: 0 active connections
+2022-09-08 19:43:01.292 [main] INFO  com.solvd.hospital.ConnectionPool - All connections were released
+2022-09-08 19:43:01.292 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-09-08 19:43:01.292 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-09-08 19:44:25.798 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-09-08 19:44:25.800 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-09-08 19:44:25.800 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-09-08 19:44:25.800 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-09-08 19:44:25.800 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-09-08 19:44:25.801 [Thread-0] INFO  com.solvd.hospital.TestThread - I´m a thread class thread
+2022-09-08 19:44:25.801 [test2] INFO  com.solvd.hospital.TestRunnable - I´m a runnable thread
+2022-09-08 19:44:25.802 [test2] INFO  com.solvd.hospital.TestRunnable - I'm taking a 5 seconds nap
+2022-09-08 19:44:25.803 [Thread-0] INFO  com.solvd.hospital.TestThread - I'm taking a 7 seconds nap
+2022-09-08 19:44:30.813 [test2] INFO  com.solvd.hospital.TestRunnable - I'm awake now!
+2022-09-08 19:44:32.815 [Thread-0] INFO  com.solvd.hospital.TestThread - I'm awake now!
+2022-09-08 19:44:33.245 [Thread-1] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:33.245 [Thread-1] INFO  com.solvd.hospital.ConnectionPool - There are: 1 active connections
+2022-09-08 19:44:33.246 [Thread-1] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 5 seconds nap
+2022-09-08 19:44:33.261 [Thread-6] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:33.261 [Thread-6] INFO  com.solvd.hospital.ConnectionPool - There are: 2 active connections
+2022-09-08 19:44:33.261 [Thread-6] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 35 seconds nap
+2022-09-08 19:44:33.274 [Thread-7] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:33.274 [Thread-7] INFO  com.solvd.hospital.ConnectionPool - There are: 3 active connections
+2022-09-08 19:44:33.274 [Thread-7] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 40 seconds nap
+2022-09-08 19:44:33.286 [Thread-3] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:33.286 [Thread-3] INFO  com.solvd.hospital.ConnectionPool - There are: 4 active connections
+2022-09-08 19:44:33.286 [Thread-3] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 15 seconds nap
+2022-09-08 19:44:33.299 [Thread-5] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:33.299 [Thread-5] INFO  com.solvd.hospital.ConnectionPool - There are: 5 active connections
+2022-09-08 19:44:33.299 [Thread-5] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 30 seconds nap
+2022-09-08 19:44:33.299 [Thread-4] INFO  com.solvd.hospital.ConnectionPool - I´m waiting till a connection is available
+2022-09-08 19:44:33.299 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - I´m waiting till a connection is available
+2022-09-08 19:44:38.248 [Thread-1] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:44:38.249 [Thread-4] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:38.249 [Thread-4] INFO  com.solvd.hospital.ConnectionPool - There are: 5 active connections
+2022-09-08 19:44:38.249 [Thread-4] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 20 seconds nap
+2022-09-08 19:44:38.249 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - I´m waiting till a connection is available
+2022-09-08 19:44:48.290 [Thread-3] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:44:48.292 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:44:48.292 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - There are: 5 active connections
+2022-09-08 19:44:48.292 [Thread-2] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 10 seconds nap
+2022-09-08 19:44:58.251 [Thread-4] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:44:58.297 [Thread-2] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:45:03.305 [Thread-5] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:45:08.263 [Thread-6] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:45:13.288 [Thread-7] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:45:13.289 [main] INFO  com.solvd.hospital.ConnectionPool - There are: 5 idle connections
+2022-09-08 19:45:13.289 [main] INFO  com.solvd.hospital.ConnectionPool - There are: 0 active connections
+2022-09-08 19:45:13.293 [main] INFO  com.solvd.hospital.ConnectionPool - All connections were released
+2022-09-08 19:45:13.293 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-09-08 19:45:13.293 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
+2022-09-08 19:46:11.003 [main] INFO  com.solvd.hospital.CustomLinkedList - Node found and removed
+2022-09-08 19:46:11.006 [main] ERROR com.solvd.hospital.CustomLinkedList - Node not found
+2022-09-08 19:46:11.007 [main] INFO  com.solvd.hospital.Main - Hello, this is Hospital demo program
+2022-09-08 19:46:11.007 [main] INFO  com.solvd.hospital.Main - You can choose between customizing the hospital rooms, employees and patients
+2022-09-08 19:46:11.007 [main] INFO  com.solvd.hospital.Main - Also, you can choose to load default configuration
+2022-09-08 19:46:11.008 [Thread-0] INFO  com.solvd.hospital.TestThread - I´m a thread class thread
+2022-09-08 19:46:11.009 [test2] INFO  com.solvd.hospital.TestRunnable - I´m a runnable thread
+2022-09-08 19:46:11.009 [test2] INFO  com.solvd.hospital.TestRunnable - I'm taking a 5 seconds nap
+2022-09-08 19:46:11.011 [Thread-0] INFO  com.solvd.hospital.TestThread - I'm taking a 7 seconds nap
+2022-09-08 19:46:16.020 [test2] INFO  com.solvd.hospital.TestRunnable - I'm awake now!
+2022-09-08 19:46:18.022 [Thread-0] INFO  com.solvd.hospital.TestThread - I'm awake now!
+2022-09-08 19:46:18.441 [Thread-1] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:18.442 [Thread-1] INFO  com.solvd.hospital.ConnectionPool - There are: 1 active connections
+2022-09-08 19:46:18.442 [Thread-1] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 5 seconds nap
+2022-09-08 19:46:18.458 [Thread-6] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:18.459 [Thread-6] INFO  com.solvd.hospital.ConnectionPool - There are: 2 active connections
+2022-09-08 19:46:18.459 [Thread-6] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 35 seconds nap
+2022-09-08 19:46:18.472 [Thread-7] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:18.472 [Thread-7] INFO  com.solvd.hospital.ConnectionPool - There are: 3 active connections
+2022-09-08 19:46:18.472 [Thread-7] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 40 seconds nap
+2022-09-08 19:46:18.484 [Thread-4] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:18.484 [Thread-4] INFO  com.solvd.hospital.ConnectionPool - There are: 4 active connections
+2022-09-08 19:46:18.484 [Thread-4] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 20 seconds nap
+2022-09-08 19:46:18.496 [Thread-5] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:18.496 [Thread-5] INFO  com.solvd.hospital.ConnectionPool - There are: 5 active connections
+2022-09-08 19:46:18.497 [Thread-5] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 30 seconds nap
+2022-09-08 19:46:18.497 [Thread-3] INFO  com.solvd.hospital.ConnectionPool - I´m waiting till a connection is available
+2022-09-08 19:46:18.497 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - I´m waiting till a connection is available
+2022-09-08 19:46:23.455 [Thread-1] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:23.457 [Thread-3] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:23.457 [Thread-3] INFO  com.solvd.hospital.ConnectionPool - There are: 5 active connections
+2022-09-08 19:46:23.457 [Thread-3] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 15 seconds nap
+2022-09-08 19:46:23.457 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - I´m waiting till a connection is available
+2022-09-08 19:46:38.471 [Thread-3] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:38.472 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - There are: 0 idle connections
+2022-09-08 19:46:38.472 [Thread-2] INFO  com.solvd.hospital.ConnectionPool - There are: 5 active connections
+2022-09-08 19:46:38.472 [Thread-2] INFO  com.solvd.hospital.ConnectingThread - I could get the connection time for a 10 seconds nap
+2022-09-08 19:46:38.487 [Thread-4] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:48.475 [Thread-2] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:48.506 [Thread-5] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:53.464 [Thread-6] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:58.473 [Thread-7] INFO  com.solvd.hospital.ConnectingThread - Now I´ll release the connection
+2022-09-08 19:46:58.473 [main] INFO  com.solvd.hospital.ConnectionPool - There are: 5 idle connections
+2022-09-08 19:46:58.474 [main] INFO  com.solvd.hospital.ConnectionPool - There are: 0 active connections
+2022-09-08 19:46:58.478 [main] INFO  com.solvd.hospital.ConnectionPool - All connections were released
+2022-09-08 19:46:58.478 [main] INFO  com.solvd.hospital.Main - Initial configuration of hospital rooms
+2022-09-08 19:46:58.478 [main] INFO  com.solvd.hospital.Main - Enter:
+"de" to load default rooms, patients, employees and procedures
+"c" to add new Consulting room,
+"d": Delivery room,
+"e" Emergency room,
+"i" Intensive care room,
+"m" Maternity room,
+"n" Nursery room,
+"r" Recovery room,
+"s" Surgery room.
+"f" to end rooms configuration:
+"exit" to close the application,
